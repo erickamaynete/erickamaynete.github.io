@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ericka Maynete - UI & Graphic Designer</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --dark-gray: #484E53;
+            --almost-black: #050505;
+            --light-blue: #4FC3F7;
+            --pale-blue: #BCE7FA;
+            --light-gray: #F8F9FA;
+            --white: #FFFFFF;
+            --border-gray: #E9ECEF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        .navbar {
+            background-color: var(--light-gray) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--dark-gray);
+            font-weight: 500;
+            margin: 0 1rem;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--light-blue);
+        }
+       
+        .hero-section {
+            background: linear-gradient(135deg, var(--pale-blue) 0%, var(--white) 100%);
+            padding: 3rem 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 0.3rem;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-content .role {
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--dark-gray) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            text-align: center;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.8rem;
+            max-width: 640px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--light-blue);
+            border: none;
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #3BA8D1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
+        }
+
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            background-color: var(--border-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .profile-photo i {
+            font-size: 4rem;
+            color: var(--light-blue);
+        }
+
+        .section {
+            padding: 3.5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--dark-gray) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            background-color: var(--border-gray);
+            border-radius: 8px;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image i {
+            font-size: 3rem;
+            color: var(--light-blue);
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 0.2rem;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: #6C757D;
+            margin-bottom: 0.35rem;
+        }
+
+        .project-description {
+            text-align: justify;
+            line-height: 1.4;
+            margin-bottom: 0.2rem;
+        }
+
+        .skill-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            height: 100%;
+            text-align: left;
+        }
+
+        .skill-icon {
+            width: 55px;
+            height: 55px;
+            background-color: var(--pale-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-icon i {
+            font-size: 1.5rem;
+            color: var(--light-blue);
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-description {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .contact-section {
+            background: #EDEFF4;
+            border-top: 1px solid #D6DDE5;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details p {
+            font-size: 1.05rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-form {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .form-control {
+            border: 2px solid #D6DDE5;
+            background-color: #EDEFF4;
+            border-radius: 10px;
+            padding: 12px 15px;
+            font-size: 1rem;
+        }
+
+        .btn-dark-custom {
+            background-color: #4B5560;
+            border: none;
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: none;
+            width: 100%;
+        }
+
+        .btn-dark-custom:hover {
+            background-color: var(--almost-black);
+            transform: translateY(-1px);
+        }
+
+        .footer {
+            background-color: #EDEFF4;
+            color: var(--dark-gray);
+            padding: 1.25rem 0;
+            border-top: 1px solid #D6DDE5;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            background-color: transparent;
+            color: var(--dark-gray);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 34px;
+            margin-left: 10px;
+            border: 2px solid #C9D2DC;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-content .role {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .profile-photo {
+                width: 220px;
+                height: 220px;
+                margin-top: 2rem;
+            }
+            
+            .section {
+                padding: 2.5rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 2.5rem 0;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: var(--light-gray);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--light-blue);"> Personal Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="hero-content">
+                        <h1>Ericka Maynete</h1>
+                        <div class="role">UI & Graphic Designer</div>
+                        <p>I specialize in creating intuitive user interfaces and compelling visual designs that blend creativity with functionality. Let's bring your ideas to life through thoughtful design.</p>
+                        <button class="btn btn-primary-custom" type="button" aria-label="Scroll to contact section" data-scroll-target="#contact">Get in Touch</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-4">
+                    <div class="profile-photo">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <span class="visually-hidden">Profile illustration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Get to know me</p>
+            <div class="about-content">
+                <p>I am a passionate UI & Graphic Designer with a keen eye for detail and a deep understanding of user experience principles. My journey in design has led me to specialize in creating digital experiences that are not only visually appealing but also highly functional and user-friendly.</p>
+                <p>I believe in the power of design to solve problems and create meaningful connections between brands and their audiences. My approach combines creative thinking with strategic planning, ensuring that every design decision serves a purpose and enhances the overall user experience.</p>
+                <p>When I'm not designing, you can find me exploring new design trends, experimenting with different tools and techniques, or collaborating with fellow creatives. I'm always excited to take on new challenges and work on projects that push the boundaries of what's possible in design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Some of my Work</p>
+            
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h4 class="project-title">E-Tech E-commerce Platform</h4>
+                        <p class="project-tech">Figma</p>
+                        <p class="project-description"> A modern ecommerce UI designed for buying phones, tablets, appliances, and other tech products. It offers a clean and easy-to-use design for a smooth online shopping experience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h4 class="project-title">Resort Managemnent</h4>
+                        <p class="project-tech">Figma</p>
+                        <p class="project-description">An intuitive resort management UI that helps manage bookings, guests, and services. It features a simple, organized layout for easy use by both staff and guests.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h4 class="project-title">The Searcher EB Pubmat</h4>
+                        <p class="project-tech">Figma, Canva</p>
+                        <p class="project-description">A collection of beat reports created to share news and information effectively. It uses a clear layout that makes reading and understanding updates easier.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h4 class="project-title">Dreamscape Dash</h4>
+                        <p class="project-tech">Phython</p>
+                        <p class="project-description">A group project game made as part of a Computer Programming subject. It highlights teamwork and creativity through fun and engaging gameplay.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <h4 class="project-title">Tranquil Trails Resort</h4>
+                        <p class="project-tech">Html, Css, Javascript, PHP</p>
+                        <p class="project-description">A group project that presents a resort management system. It focuses on smooth booking, guest handling, and service management through a simple, user-friendly interface.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h4 class="project-title">E-Tech E-commerce Platform</h4>
+                        <p class="project-tech">Phython,PHP</p>
+                        <p class="project-description">A group project that showcases an online store for gadgets and appliances. It features a modern and easy-to-navigate design for better shopping convenience.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">Some of my skills</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4 class="skill-title">Data Analytics & Visualization</h4>
+                        <p class="skill-description">Transforming complex data into clear, actionable insights through compelling visualizations and interactive dashboards.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4 class="skill-title">Predictive Analytics and Forecasting</h4>
+                        <p class="skill-description">Using advanced statistical models and machine learning to predict future trends and make data-driven decisions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4 class="skill-title">Natural Language Processing</h4>
+                        <p class="skill-description">Developing intelligent systems that understand and process human language for various applications and use cases.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4 class="skill-title">AI Chatbots</h4>
+                        <p class="skill-description">Creating intelligent conversational interfaces that provide seamless user experiences and automated customer support.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4 class="skill-title">Machine Learning</h4>
+                        <p class="skill-description">Building and deploying machine learning models to solve complex problems and automate decision-making processes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="skill-title">Data Engineering</h4>
+                        <p class="skill-description">Designing and maintaining robust data pipelines and infrastructure for efficient data processing and storage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h2>Have an idea? Let's Work Together</h2>
+                        <div class="contact-details">
+                        <p><i class="fas fa-envelope me-2"></i>erickamaynete@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Trapiche, Tanauan City, Batangas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="example@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="full name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark-custom">Get in Touch</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2023 all rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-icons text-md-end">
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-scroll-target]').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const target = document.querySelector(this.getAttribute('data-scroll-target'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+        });
+    </script>
+</body>
+</html>
