@@ -8,19 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Radley:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --dark-gray: #484E53;
-            --almost-black: #050505;
-            --light-blue: #4FC3F7;
-            --pale-blue: #BCE7FA;
-            --light-gray: #F8F9FA;
+            --bg: #E4E4E2;
+            --text: #1E1E1E;
             --white: #FFFFFF;
-            --border-gray: #E9ECEF;
         }
 
         * {
@@ -30,61 +26,100 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--light-gray);
+            color: var(--text);
+            background-color: var(--bg);
+            padding-top: 0;
         }
         
         .navbar {
-            background-color: var(--light-gray) !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 1rem 0;
+            background-color: var(--bg) !important;
+            box-shadow: none;
+            padding: 0.5rem;
+            margin-bottom: 0;
+            border-bottom: 1px solid rgba(30,30,30,0.2);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1030;
+        }
+        .navbar::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0;
+            bottom: -1px;
+            height: 0;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        .navbar-brand img {
+            height: 36px;
+            width: auto;
+            display: block;
         }
 
         .navbar-nav .nav-link {
-            color: var(--dark-gray);
+            color: var(--text);
             font-weight: 500;
             margin: 0 1rem;
         }
 
         .navbar-nav .nav-link.active {
-            color: var(--light-blue);
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 6px;
         }
-       
+
+        .btn-contact {
+            color: var(--text) !important;
+            border: 2px solid var(--text);
+            border-radius: 8px;
+            padding: 6px 16px;
+            line-height: 1;
+            background: transparent;
+        }
+        .btn-contact:hover { background-color: rgba(30,30,30,0.08); }
+
         .hero-section {
-            background: linear-gradient(135deg, var(--pale-blue) 0%, var(--white) 100%);
-            padding: 3rem 0;
+            background: var(--bg);
+            padding: 4rem 0;
             min-height: 70vh;
             display: flex;
             align-items: center;
+            margin-top: 0;
+            border-top: 0;
+            /* prevent top-margin collapse from first child */
+            overflow: hidden;
+            position: relative;
         }
 
         .hero-content h1 {
+            font-family: 'Radley', serif;
             font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--dark-gray);
+            font-weight: 400;
+            color: var(--text);
             margin-bottom: 0.3rem;
             line-height: 1.1;
             text-align: center;
         }
+        .hero-content h1 em { font-style: italic; }
+        .hero-content h1 .name { text-decoration: underline; text-underline-offset: 8px; }
 
         .hero-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 6px;
-            max-width: 700px;
+            gap: 4px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero-content .role {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.3rem;
-            background: linear-gradient(135deg, var(--light-blue) 0%, var(--dark-gray) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text);
             font-weight: 500;
             margin-bottom: 0.4rem;
             text-align: center;
@@ -92,48 +127,44 @@
 
         .hero-content p {
             font-size: 1.05rem;
-            color: var(--dark-gray);
+            color: var(--text);
             margin-bottom: 0.8rem;
-            max-width: 640px;
-            line-height: 1.5;
+            max-width: 650px;
+            line-height: 1.2;
             text-align: center;
         }
 
         .btn-primary-custom {
-            background-color: var(--light-blue);
-            border: none;
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+            background-color: var(--bg);
+            color: var(--text);
+            border: 2px solid var(--text);
+            padding: 10px 40px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+            box-shadow: none;
             display: block;
-            margin: 0 auto;
+            margin: 0.25rem;
         }
 
         .btn-primary-custom:hover {
-            background-color: #3BA8D1;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
+            background-color: rgba(30,30,30,0.06);
+            box-shadow: none;
+            transform: none;
         }
 
         .profile-photo {
-            width: 280px;
-            height: 280px;
+            width: 340px;
+            height: 340px;
             background-color: var(--border-gray);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+            display: block;
             margin: 0 auto;
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
-
-        .profile-photo i {
-            font-size: 4rem;
-            color: var(--light-blue);
-        }
+        .profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
         .section {
             padding: 3.5rem 0;
@@ -164,54 +195,46 @@
         }
 
         .about-content p {
-            font-size: 1.05rem;
-            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--dark-gray);
-            line-height: 1.6;
+            line-height: 1.3;
         }
 
         .project-card {
-            background-color: var(--white);
+            background-color: transparent;
             border-radius: 12px;
-            padding: 1.25rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 0.25rem 0.25rem 0.5rem;
+            box-shadow: none;
             height: 100%;
         }
 
-        .project-image {
+        .project-thumb {
             width: 100%;
             height: 180px;
-            background-color: var(--border-gray);
             border-radius: 8px;
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-image i {
-            font-size: 3rem;
-            color: var(--light-blue);
+            object-fit: cover;
+            display: block;
+            background: #dfeaf2;
         }
 
         .project-title {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.15rem;
+            font-weight: 700;
             color: var(--dark-gray);
-            margin-bottom: 0.2rem;
-        }
-
-        .project-tech {
-            font-size: 0.85rem;
-            color: #6C757D;
-            margin-bottom: 0.35rem;
+            margin: 0.6rem 0 0.25rem;
         }
 
         .project-description {
-            text-align: justify;
-            line-height: 1.4;
-            margin-bottom: 0.2rem;
+            text-align: left;
+            line-height: 1.45;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
         }
+
+        .project-links a,
+        .project-role a { color: var(--brand-blue); text-decoration: underline; }
+        .project-role { color: var(--brand-blue); font-weight: 600; }
 
         .skill-card {
             background-color: var(--white);
@@ -220,6 +243,51 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             height: 100%;
             text-align: left;
+        }
+
+        /* Redesigned skills */
+        .skills-grid .skill-card.block {
+            background: linear-gradient(180deg, #ebf6fe 0%, #f5fbff 100%);
+            border: 1px solid #cfe3f2;
+            border-radius: 14px;
+            box-shadow: 0 6px 16px rgba(32, 96, 128, 0.10);
+        }
+
+        .skill-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: #d6eefc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1f6f95;
+            box-shadow: inset 0 0 0 1px rgba(31,111,149,0.15);
+        }
+        .skill-badge i { font-size: 1.1rem; }
+        .skill-badge.badge-tech { background:#dbeafe; color:#2563eb; }
+        .skill-badge.badge-tools { background:#e0f2fe; color:#0284c7; }
+        .skill-badge.badge-creative { background:#cae9fb; color:#0ea5e9; }
+
+        .skill-list {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        .skill-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-list li::before {
+            content: "\f058"; /* fa-check-circle */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--brand-blue);
+            position: absolute;
+            left: 0;
+            top: 0.05rem;
+            font-size: 0.95rem;
         }
 
         .skill-icon {
@@ -252,58 +320,49 @@
         }
 
         .contact-section {
-            background: #EDEFF4;
+            background: #E7EFF8;
             border-top: 1px solid #D6DDE5;
         }
 
         .contact-info h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--dark-gray);
             margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .contact-details {
-            margin-bottom: 1.5rem;
-        }
-
+        .contact-details { margin-bottom: 1.25rem; }
         .contact-details p {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--dark-gray);
             margin-bottom: 0.4rem;
         }
 
-        .contact-form {
-            background-color: transparent;
-            padding: 0;
-            border-radius: 0;
-            box-shadow: none;
-        }
+        .contact-form { background-color: transparent; padding: 0; border-radius: 0; box-shadow: none; }
 
         .form-control {
-            border: 2px solid #D6DDE5;
-            background-color: #EDEFF4;
-            border-radius: 10px;
+            border: 1.5px solid #9FB3C8;
+            background-color: #FFFFFF;
+            border-radius: 8px;
             padding: 12px 15px;
             font-size: 1rem;
         }
+        .form-control::placeholder { color: #98A6B8; }
+        .form-control:focus { box-shadow: 0 0 0 3px rgba(47,147,181,0.15); border-color: #6ea8c3; }
 
-        .btn-dark-custom {
-            background-color: #4B5560;
-            border: none;
+        .btn-submit {
+            background-color: var(--brand-blue);
+            border: 1px solid #2a89a8;
             color: var(--white);
             padding: 12px 30px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
             transition: all 0.2s ease;
             box-shadow: none;
             width: 100%;
         }
-
-        .btn-dark-custom:hover {
-            background-color: var(--almost-black);
-            transform: translateY(-1px);
-        }
+        .btn-submit:hover { background-color: #2a89a8; }
 
         .footer {
             background-color: #EDEFF4;
@@ -314,15 +373,15 @@
 
         .social-icons a {
             display: inline-block;
-            width: 34px;
-            height: 34px;
+            width: 28px;
+            height: 28px;
             background-color: transparent;
             color: var(--dark-gray);
-            border-radius: 50%;
+            border-radius: 4px;
             text-align: center;
-            line-height: 34px;
-            margin-left: 10px;
-            border: 2px solid #C9D2DC;
+            line-height: 26px;
+            margin-right: 8px;
+            border: 2px solid #7F90A5;
         }
 
         @media (max-width: 768px) {
@@ -339,8 +398,8 @@
             }
             
             .profile-photo {
-                width: 220px;
-                height: 220px;
+                width: 280px;
+                height: 280px;
                 margin-top: 2rem;
             }
             
@@ -363,21 +422,21 @@
             }
             
             .profile-photo {
-                width: 180px;
-                height: 180px;
+                width: 220px;
+                height: 220px;
             }
         }
+
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: var(--light-gray);">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="color: var(--light-blue);"> Personal Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
@@ -385,13 +444,13 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacts</a>
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="nav-link btn-contact" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -403,16 +462,10 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-8 col-xl-6">
                     <div class="hero-content">
-                        <h1>Ericka Maynete</h1>
-                        <div class="role">UI & Graphic Designer</div>
+                        <h1><em>Hello, I am</em> <span class="name">Ericka</span></h1>
+                        <div class="role">Aspiring UI/UX & Graphic Designer</div>
                         <p>I specialize in creating intuitive user interfaces and compelling visual designs that blend creativity with functionality. Let's bring your ideas to life through thoughtful design.</p>
                         <button class="btn btn-primary-custom" type="button" aria-label="Scroll to contact section" data-scroll-target="#contact">Get in Touch</button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-4">
-                    <div class="profile-photo">
-                        <i class="fas fa-user" aria-hidden="true"></i>
-                        <span class="visually-hidden">Profile illustration</span>
                     </div>
                 </div>
             </div>
@@ -431,136 +484,131 @@
         </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Some of my Work</p>
-            
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">Skills and Technologies</p>
 
-            <div class="row g-4">
+            <div class="row g-4 skills-grid">
                 <div class="col-lg-4 col-md-6">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-store"></i>
+                    <div class="skill-card block">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="skill-badge badge-tech me-3"><i class="fa-solid fa-gears"></i></div>
+                            <h4 class="skill-title m-0">Technical Skills</h4>
                         </div>
-                        <h4 class="project-title">E-Tech E-commerce Platform</h4>
-                        <p class="project-tech">Figma</p>
-                        <p class="project-description"> A modern ecommerce UI designed for buying phones, tablets, appliances, and other tech products. It offers a clean and easy-to-use design for a smooth online shopping experience.</p>
+                        <ul class="skill-list">
+                            <li>UI/UX Design & Research</li>
+                            <li>Wireframing & Prototyping</li>
+                            <li>Responsive Web & Mobile Design</li>
+                            <li>Visual Design & Branding</li>
+                            <li>Usability Testing & Accessibility</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-hotel"></i>
+                    <div class="skill-card block">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="skill-badge badge-tools me-3"><i class="fa-solid fa-code"></i></div>
+                            <h4 class="skill-title m-0">Tools & Languages</h4>
                         </div>
-                        <h4 class="project-title">Resort Managemnent</h4>
-                        <p class="project-tech">Figma</p>
-                        <p class="project-description">An intuitive resort management UI that helps manage bookings, guests, and services. It features a simple, organized layout for easy use by both staff and guests.</p>
+                        <ul class="skill-list">
+                            <li>UI/UX Design: Figma, Adobe XD</li>
+                            <li>Graphic Design: Adobe PS, AI, Canva</li>
+                            <li>Front-end: HTML, CSS, Bootstrap</li>
+                            <li>Back-end: Python, MySQL, PHP</li>
+                            <li>Documentation: Notion</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-newspaper"></i>
+                    <div class="skill-card block">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="skill-badge badge-creative me-3"><i class="fa-solid fa-palette"></i></div>
+                            <h4 class="skill-title m-0">Creative Expertise</h4>
                         </div>
-                        <h4 class="project-title">The Searcher EB Pubmat</h4>
-                        <p class="project-tech">Figma, Canva</p>
-                        <p class="project-description">A collection of beat reports created to share news and information effectively. It uses a clear layout that makes reading and understanding updates easier.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h4 class="project-title">Dreamscape Dash</h4>
-                        <p class="project-tech">Phython</p>
-                        <p class="project-description">A group project game made as part of a Computer Programming subject. It highlights teamwork and creativity through fun and engaging gameplay.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-umbrella-beach"></i>
-                        </div>
-                        <h4 class="project-title">Tranquil Trails Resort</h4>
-                        <p class="project-tech">Html, Css, Javascript, PHP</p>
-                        <p class="project-description">A group project that presents a resort management system. It focuses on smooth booking, guest handling, and service management through a simple, user-friendly interface.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h4 class="project-title">E-Tech E-commerce Platform</h4>
-                        <p class="project-tech">Phython,PHP</p>
-                        <p class="project-description">A group project that showcases an online store for gadgets and appliances. It features a modern and easy-to-navigate design for better shopping convenience.</p>
+                        <ul class="skill-list">
+                            <li>Brand Identity Development</li>
+                            <li>Typography & Color Theory</li>
+                            <li>Layout & Composition</li>
+                            <li>Design & Prototyping</li>
+                            <li>User Research & Collaboration</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-subtitle">Some of my skills</p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Some of my recent work</p>
             
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h4 class="skill-title">Data Analytics & Visualization</h4>
-                        <p class="skill-description">Transforming complex data into clear, actionable insights through compelling visualizations and interactive dashboards.</p>
+                    <div class="project-card">
+                        <img class="project-thumb" src="img/projects/iphone-showcase.jpg" alt="Iphone 11 - Showcase" />
+                        <h4 class="project-title">Iphone 11 - Showcase</h4>
+                        <p class="project-description">The iPhone 11 Showcase is a website that presents the iPhone 11's features and design in a clean and visually engaging way.</p>
+                        <p class="project-links mb-1">
+                            <a href="#">HTML</a> · <a href="#">Bootstrap</a> · <a href="#">Figma</a>
+                        </p>
+                        <p class="project-role">Role: Full stack – UI/UX Designer</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h4 class="skill-title">Predictive Analytics and Forecasting</h4>
-                        <p class="skill-description">Using advanced statistical models and machine learning to predict future trends and make data-driven decisions.</p>
+                    <div class="project-card">
+                        <img class="project-thumb" src="img/projects/maldives-island.jpg" alt="Maldives Island" />
+                        <h4 class="project-title">Maldives Island</h4>
+                        <p class="project-description">The Maldives Island website is a tourism platform that highlights attractions, culture, and history through an informative and user-friendly design.</p>
+                        <p class="project-links mb-1">
+                            <a href="#">HTML</a> · <a href="#">Bootstrap</a> · <a href="#">Figma</a>
+                        </p>
+                        <p class="project-role">Role: Full-stack Developer – UI/UX Designer</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h4 class="skill-title">Natural Language Processing</h4>
-                        <p class="skill-description">Developing intelligent systems that understand and process human language for various applications and use cases.</p>
+                    <div class="project-card">
+                        <img class="project-thumb" src="img/projects/etech-ecommerce.jpg" alt="E-Tech E-commerce Platform" />
+                        <h4 class="project-title">E-Tech E-commerce Platform</h4>
+                        <p class="project-description">E-Tech is a group project that showcases an online store for gadgets and home appliances, featuring a modern, easy-to-navigate design that enhances shopping convenience.</p>
+                        <p class="project-links mb-1">
+                            <a href="#">Python</a> · <a href="#">PHP</a> · <a href="#">JSON</a> · <a href="#">Figma</a>
+                        </p>
+                        <p class="project-role">Role: UI/UX Designer – Front-end Developer</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4 class="skill-title">AI Chatbots</h4>
-                        <p class="skill-description">Creating intelligent conversational interfaces that provide seamless user experiences and automated customer support.</p>
+                    <div class="project-card">
+                        <img class="project-thumb" src="img/projects/tranquil-trails.jpg" alt="Tranquil Trails Resort" />
+                        <h4 class="project-title">Tranquil Trails Resort</h4>
+                        <p class="project-description">Tranquil Trails is a group project that showcases a resort management system focused on smooth booking, efficient guest handling, and streamlined service management.</p>
+                        <p class="project-links mb-1">
+                            <a href="#">HTML</a> · <a href="#">CSS</a> · <a href="#">JavaScript</a> · <a href="#">Figma</a>
+                        </p>
+                        <p class="project-role">Role: Front-end Developer – UI/UX Designer</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h4 class="skill-title">Machine Learning</h4>
-                        <p class="skill-description">Building and deploying machine learning models to solve complex problems and automate decision-making processes.</p>
+                    <div class="project-card">
+                        <img class="project-thumb" src="img/projects/dreamscape-dash.jpg" alt="Dreamscape Dash" />
+                        <h4 class="project-title">Dreamscape Dash</h4>
+                        <p class="project-description">A collaborative group project game developed for a programming course, showcasing teamwork, creativity, and engaging gameplay designed to entertain and challenge players.</p>
+                        <p class="project-links mb-1">
+                            <a href="#">Python</a>
+                        </p>
+                        <p class="project-role">Role: Front-end Developer</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h4 class="skill-title">Data Engineering</h4>
-                        <p class="skill-description">Designing and maintaining robust data pipelines and infrastructure for efficient data processing and storage.</p>
+                    <div class="project-card">
+                        <img class="project-thumb" src="img/projects/ev-mobile.jpg" alt="EV Mobile Application" />
+                        <h4 class="project-title">EV Mobile Application</h4>
+                        <p class="project-description">A personal project designed using Figma and Adobe, showcasing skills in UI design and interactive prototyping for a smooth and user-friendly mobile experience.</p>
+                        <p class="project-links mb-1">
+                            <a href="#">Figma</a> · <a href="#">Adobe</a>
+                        </p>
+                        <p class="project-role">Role: UI/UX Designer</p>
                     </div>
                 </div>
             </div>
@@ -572,10 +620,16 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="contact-info">
-                        <h2>Have an idea? Let's Work Together</h2>
+                        <h2>Have an idea?<br>Let’s Work Together</h2>
                         <div class="contact-details">
-                        <p><i class="fas fa-envelope me-2"></i>erickamaynete@gmail.com</p>
-                        <p><i class="fas fa-map-marker-alt me-2"></i>Trapiche, Tanauan City, Batangas</p>
+                            <p><i class="fas fa-envelope me-2"></i>erickamaynete@gmail.com</p>
+                            <p><i class="fas fa-phone me-2"></i>+63 993 015 2544</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Batangas, Philippines</p>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -584,17 +638,17 @@
                         <form>
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="example@email.com">
+                                <input type="text" class="form-control" id="name" placeholder="Name">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="full name">
+                                <input type="email" class="form-control" id="email" placeholder="example@email.com">
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
                                 <textarea class="form-control" id="message" rows="4" placeholder="Your message here..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-dark-custom">Get in Touch</button>
+                            <button type="submit" class="btn btn-submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -606,7 +660,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">© 2023 all rights reserved.</p>
+                    <p class="mb-0">© 2025 all rights reserved.</p>
                 </div>
                 <div class="col-md-6">
                     <div class="social-icons text-md-end">
@@ -622,6 +676,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
+        function setBodyOffset(){
+            const nav = document.querySelector('.navbar');
+            if (!nav) return;
+            document.body.style.paddingTop = nav.offsetHeight + 'px';
+        }
+        window.addEventListener('load', setBodyOffset);
+        window.addEventListener('resize', setBodyOffset);
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
