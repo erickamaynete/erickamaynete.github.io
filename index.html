@@ -86,7 +86,6 @@
             align-items: center;
             margin-top: 0;
             border-top: 0;
-            /* prevent top-margin collapse from first child */
             overflow: hidden;
             position: relative;
         }
@@ -410,19 +409,22 @@
 
         .project-title {
             font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--dark-gray);
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: #1E1E1E;
             margin: 0.6rem 0 0.25rem;
         }
 
         .project-description {
             text-align: left;
-            line-height: 1.45;
-            color: var(--dark-gray);
+            line-height: 1.5;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            color: #1E1E1E;
+            opacity: 0.9;
             margin-bottom: 0.5rem;
         }
 
-        /* Projects intro banner */
         .projects-intro {
             background-color: #E4E4E2;
             padding: clamp(2rem, 6vw, 4rem) 0;
@@ -430,7 +432,7 @@
         .projects-intro .projects-title {
             font-family: 'Radley', serif;
             font-size: clamp(36px, 4.2vw, 64px);
-            font-weight: 400;
+            font-weight: 600;
             line-height: 1.1;
             text-align: center;
             margin: 0;
@@ -451,9 +453,17 @@
             text-decoration-thickness: 2px;
         }
 
-        .project-links a,
-        .project-role a { color: var(--brand-blue); text-decoration: underline; }
-        .project-role { color: var(--brand-blue); font-weight: 600; }
+        #projects { background-color: #E4E4E2; }
+
+        .project-tools { font-family: 'Montserrat', sans-serif; color: #1E1E1E; margin-bottom: 0.35rem; }
+        .project-tools span { font-weight: 300; }
+
+        .project-role { display: inline-block; background: #1E1E1E; color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-weight: 400; padding: 6px 10px; border-radius: 4px; }
+
+        .project-thumb { width: 100%; height: 210px; object-fit: cover; border-radius: 6px; display: block; }
+
+        .project-actions { margin-top: 8px; text-align: right; }
+        .project-actions .view-more { font-family: 'Montserrat', sans-serif; color: #1E1E1E; font-weight: 600; text-decoration: underline; }
 
         .skill-card {
             background-color: var(--white);
@@ -761,10 +771,11 @@
                         <img class="project-thumb" src="img/projects/iphone-showcase.jpg" alt="Iphone 11 - Showcase" />
                         <h4 class="project-title">Iphone 11 - Showcase</h4>
                         <p class="project-description">The iPhone 11 Showcase is a website that presents the iPhone 11's features and design in a clean and visually engaging way.</p>
-                        <p class="project-links mb-1">
-                            <a href="#">HTML</a> · <a href="#">Bootstrap</a> · <a href="#">Figma</a>
+                        <p class="project-tools mb-1">
+                            <span>Figma</span> · <span>HTML</span> · <span>Bootstrap</span>
                         </p>
-                        <p class="project-role">Role: Full stack – UI/UX Designer</p>
+                        <p class="project-role">Role: UI/UX Designer – Full-stack Developer</p>
+                        <div class="project-actions"><a class="view-more" href="https://github.com/erickamaynete/iphone-11.git" target="_blank" rel="noopener noreferrer">View more</a></div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -772,21 +783,23 @@
                         <img class="project-thumb" src="img/projects/maldives-island.jpg" alt="Maldives Island" />
                         <h4 class="project-title">Maldives Island</h4>
                         <p class="project-description">The Maldives Island website is a tourism platform that highlights attractions, culture, and history through an informative and user-friendly design.</p>
-                        <p class="project-links mb-1">
-                            <a href="#">HTML</a> · <a href="#">Bootstrap</a> · <a href="#">Figma</a>
+                        <p class="project-tools mb-1">
+                            <span>Figma</span> · <span>HTML</span> · <span>Bootstrap</span>
                         </p>
-                        <p class="project-role">Role: Full-stack Developer – UI/UX Designer</p>
+                        <p class="project-role">Role: UI/UX Designer – Full-stack Developer</p>
+                        <div class="project-actions"><a class="view-more" href="https://github.com/erickamaynete/maldives-island.git" target="_blank" rel="noopener noreferrer">View more</a></div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
                         <img class="project-thumb" src="img/projects/etech-ecommerce.jpg" alt="E-Tech E-commerce Platform" />
                         <h4 class="project-title">E-Tech E-commerce Platform</h4>
-                        <p class="project-description">E-Tech is a group project that showcases an online store for gadgets and home appliances, featuring a modern, easy-to-navigate design that enhances shopping convenience.</p>
-                        <p class="project-links mb-1">
-                            <a href="#">Python</a> · <a href="#">PHP</a> · <a href="#">JSON</a> · <a href="#">Figma</a>
+                        <p class="project-description">E-Tech is a group project showcasing a sleek, user-friendly online store for gadgets and home appliances.</p>
+                        <p class="project-tools mb-1">
+                            <span>Figma</span> · <span>Python</span> · <span>PHP</span> · <span>JSON</span>
                         </p>
                         <p class="project-role">Role: UI/UX Designer – Front-end Developer</p>
+                        <div class="project-actions"><a class="view-more" href="https://embed.figma.com/proto/5BQpEK5cy4piAyGChnnt3j/E-Tech?node-id=543-20931&embed-host=share" target="_blank" rel="noopener noreferrer">View more</a></div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -794,10 +807,11 @@
                         <img class="project-thumb" src="img/projects/tranquil-trails.jpg" alt="Tranquil Trails Resort" />
                         <h4 class="project-title">Tranquil Trails Resort</h4>
                         <p class="project-description">Tranquil Trails is a group project that showcases a resort management system focused on smooth booking, efficient guest handling, and streamlined service management.</p>
-                        <p class="project-links mb-1">
-                            <a href="#">HTML</a> · <a href="#">CSS</a> · <a href="#">JavaScript</a> · <a href="#">Figma</a>
+                        <p class="project-tools mb-1">
+                            <span>Figma</span> · <span>HTML</span> · <span>CSS</span> · <span>Bootstrap</span> · <span>Javascript</span>
                         </p>
-                        <p class="project-role">Role: Front-end Developer – UI/UX Designer</p>
+                        <p class="project-role">Role: UI/UX Designer – Front-end Developer</p>
+                        <div class="project-actions"><a class="view-more" href="https://embed.figma.com/proto/JQbwlNyUkLsQpTpSv0BLGH/Resort-Management?node-id=1-2&starting-point-node-id=1%3A2&embed-host=share" target="_blank" rel="noopener noreferrer">View more</a></div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -805,10 +819,11 @@
                         <img class="project-thumb" src="img/projects/dreamscape-dash.jpg" alt="Dreamscape Dash" />
                         <h4 class="project-title">Dreamscape Dash</h4>
                         <p class="project-description">A collaborative group project game developed for a programming course, showcasing teamwork, creativity, and engaging gameplay designed to entertain and challenge players.</p>
-                        <p class="project-links mb-1">
-                            <a href="#">Python</a>
+                        <p class="project-tools mb-1">
+                            <span>Python</span>
                         </p>
                         <p class="project-role">Role: Front-end Developer</p>
+                        <div class="project-actions"><a class="view-more" href="#">View more</a></div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -816,10 +831,11 @@
                         <img class="project-thumb" src="img/projects/ev-mobile.jpg" alt="EV Mobile Application" />
                         <h4 class="project-title">EV Mobile Application</h4>
                         <p class="project-description">A personal project designed using Figma and Adobe, showcasing skills in UI design and interactive prototyping for a smooth and user-friendly mobile experience.</p>
-                        <p class="project-links mb-1">
-                            <a href="#">Figma</a> · <a href="#">Adobe</a>
+                        <p class="project-tools mb-1">
+                            <span>Figma</span> · <span>Adobe</span>
                         </p>
                         <p class="project-role">Role: UI/UX Designer</p>
+                        <div class="project-actions"><a class="view-more" href="#">View more</a></div>
                     </div>
                 </div>
             </div>
