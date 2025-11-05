@@ -234,8 +234,6 @@
             background: rgba(228, 228, 226, 0.55);
             position: relative;
         }
-
-        /* Edge variant: stretch the rule to the container edge */
         .section-head .rule.edge {
             flex: 1 1 auto;
             width: auto;
@@ -282,12 +280,10 @@
             justify-content: flex-start;
         }
 
-        /* About header variant: title then rule, aligned to the right */
         .section-head.about-head {
             justify-content: flex-end;
         }
 
-        /* Visual Identity header variant: rule then title, aligned to the left */
         .section-head.vi-head {
             justify-content: flex-start;
         }
@@ -428,8 +424,7 @@
 
         /* Projects intro banner */
         .projects-intro {
-            background: #E4E4E2;
-            color: #1E1E1E;
+            background-color: #E4E4E2;
             padding: clamp(2rem, 6vw, 4rem) 0;
         }
         .projects-intro .projects-title {
@@ -439,6 +434,7 @@
             line-height: 1.1;
             text-align: center;
             margin: 0;
+            color: #1E1E1E;
         }
         .projects-intro .projects-subtitle {
             font-family: 'Montserrat', sans-serif;
@@ -447,6 +443,12 @@
             margin-top: 10px;
             color: #1E1E1E;
             opacity: 0.9;
+        }
+
+        .projects-intro .projects-title .u-underline {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 2px;
         }
 
         .project-links a,
@@ -462,7 +464,6 @@
             text-align: left;
         }
 
-        /* Redesigned skills */
         .skills-grid .skill-card.block {
             background: linear-gradient(180deg, #ebf6fe 0%, #f5fbff 100%);
             border: 1px solid #cfe3f2;
@@ -747,10 +748,13 @@
 
 
     <section id="projects" class="section">
+        <div class="projects-intro">
+            <div class="container">
+                <h2 class="projects-title"><em>My</em> <span class="u-underline">Projects</span></h2>
+                <p class="projects-subtitle">A curated collection of projects showcasing my skills in graphic design and UI/UX</p>
+            </div>
+        </div>
         <div class="container">
-            <h2 class="projects-title"><em>My</em> Projects</h2>
-            <p class="projects-subtitle">A curated collection of projects showcasing my skills in graphic design and UI/UX</p>
-            
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
