@@ -28,6 +28,7 @@
             color: var(--text);
             background-color: var(--bg);
             padding-top: 0;
+            font-size: 15px;
         }
         
         .navbar {
@@ -48,12 +49,6 @@
             height: 0;
             background: transparent;
             pointer-events: none;
-        }
-
-        .navbar-brand img {
-            height: 36px;
-            width: auto;
-            display: block;
         }
 
         .navbar-nav .nav-link {
@@ -92,7 +87,7 @@
 
         .hero-content h1 {
             font-family: 'Radley', serif;
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: 400;
             color: var(--text);
             margin-bottom: 0.3rem;
@@ -184,19 +179,6 @@
             border-radius: 0;
             box-shadow: none;
         }
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .avatar img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            display: block;
-        }
         .text-col {
             display: flex;
             flex-direction: column;
@@ -270,11 +252,6 @@
             transform: translateY(-50%);
         }
 
-        .section-head.right.circle-left .rule::after {
-            left: -6px;
-            right: auto;
-        }
-
         .section-head.left {
             justify-content: flex-start;
         }
@@ -285,11 +262,6 @@
 
         .section-head.vi-head {
             justify-content: flex-start;
-        }
-
-        .section-head.left.circle-left .rule::after {
-            left: -6px;
-            right: auto;
         }
 
         .section-head.left .rule::after {
@@ -303,7 +275,6 @@
             background: rgba(228, 228, 226, 0.85);
             transform: translateY(-50%);
         }
-
         .section-head.left.circle-left .rule::after {
             left: -6px;
             right: auto;
@@ -398,15 +369,6 @@
             height: 100%;
         }
 
-        .project-thumb {
-            width: 100%;
-            height: 180px;
-            border-radius: 8px;
-            object-fit: cover;
-            display: block;
-            background: #dfeaf2;
-        }
-
         .project-title {
             font-size: 1.15rem;
             font-weight: 600;
@@ -453,164 +415,74 @@
             text-decoration-thickness: 2px;
         }
 
-        #projects { background-color: #E4E4E2; }
+        #projects { background-color: #E4E4E2; padding-bottom: 2rem; }
 
         .project-tools { font-family: 'Montserrat', sans-serif; color: #1E1E1E; margin-bottom: 0.35rem; }
         .project-tools span { font-weight: 300; }
 
         .project-role { display: inline-block; background: #1E1E1E; color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-weight: 400; padding: 6px 10px; border-radius: 4px; }
 
-        .project-thumb { width: 100%; height: 210px; object-fit: cover; border-radius: 6px; display: block; }
+        .project-thumb { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; display: block; }
 
         .project-actions { margin-top: 8px; text-align: right; }
         .project-actions .view-more { font-family: 'Montserrat', sans-serif; color: #1E1E1E; font-weight: 600; text-decoration: underline; }
 
-        .skill-card {
-            background-color: var(--white);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            height: 100%;
-            text-align: left;
-        }
+        .skills-dark { background-color: #1E1E1E; color: #E4E4E2; padding: clamp(2rem, 6vw, 4rem) 0; }
+        .skills-dark .skills-heading { font-family: 'Poppins', sans-serif; font-weight: 700; color: #FFFFFF; margin-bottom: 0.5rem; font-size: 1rem; }
+        .skills-dark .skills-bullets { margin: 0; padding-left: 1rem; list-style: disc; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; }
+        .skills-dark .skills-bullets li { margin: 0.25rem 0; }
+        .skills-dark .skills-bullets li strong { color: #FFFFFF; font-weight: 600; }
 
-        .skills-grid .skill-card.block {
-            background: linear-gradient(180deg, #ebf6fe 0%, #f5fbff 100%);
-            border: 1px solid #cfe3f2;
-            border-radius: 14px;
-            box-shadow: 0 6px 16px rgba(32, 96, 128, 0.10);
-        }
+        .skills-dark .favorites-title { font-family: 'Radley', serif; color: #FFFFFF; margin-bottom: 0.6rem; text-align: left; font-size: clamp(20px, 2vw, 32px); }
+        .skills-dark .favorites-title .u-underline { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+        .skills-dark .skills-separator { width: 120px; height: 2px; background: #E4E4E2; border-radius: 2px; position: relative; margin: 0.3rem 0 0.6rem; }
+        .skills-dark .skills-separator::after { content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; border-radius: 50%; background: #E4E4E2; transform: translate(-50%, -50%); }
 
-        .skill-badge {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: #d6eefc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1f6f95;
-            box-shadow: inset 0 0 0 1px rgba(31,111,149,0.15);
-        }
-        .skill-badge i { font-size: 1.1rem; }
-        .skill-badge.badge-tech { background:#dbeafe; color:#2563eb; }
-        .skill-badge.badge-tools { background:#e0f2fe; color:#0284c7; }
-        .skill-badge.badge-creative { background:#cae9fb; color:#0ea5e9; }
+        .skills-dark .favorites-icons { display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; }
+        .skills-dark .fav-box { width: 92px; height: 72px; border-radius: 14px; background: #E4E4E2; color: #1E1E1E; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.28); }
+        .skills-dark .fav-box i { font-size: 32px; }
+        .skills-dark .fav-box img { width: 36px; height: 36px; display: block; }
+        .skills-dark .fav-text { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 22px; line-height: 1; }
 
-        .skill-list {
-            margin: 0;
-            padding-left: 0;
-            list-style: none;
-        }
-        .skill-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .skill-list li::before {
-            content: "\f058"; /* fa-check-circle */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--brand-blue);
-            position: absolute;
-            left: 0;
-            top: 0.05rem;
-            font-size: 0.95rem;
-        }
+        
 
-        .skill-icon {
-            width: 55px;
-            height: 55px;
-            background-color: var(--pale-blue);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-        }
-
-        .skill-icon i {
-            font-size: 1.5rem;
-            color: var(--light-blue);
-        }
-
-        .skill-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 0.8rem;
-        }
-
-        .skill-description {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .contact-section {
-            background: #E7EFF8;
-            border-top: 1px solid #D6DDE5;
-        }
-
-        .contact-info h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .contact-details { margin-bottom: 1.25rem; }
-        .contact-details p {
-            font-size: 1rem;
-            color: var(--dark-gray);
-            margin-bottom: 0.4rem;
-        }
-
+        .contact-section { background-color: #E4E4E2; padding: 1rem 0; margin: 1rem 0; }
+        .contact-info h2 { font-family: 'Radley', serif; font-weight: 400; color: #1E1E1E; margin-bottom: 0.5rem; font-size: clamp(22px, 2.6vw, 36px); }
+        .contact-info h2 em { font-style: italic; }
+        .contact-info .u-underline { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+        .contact-details p { margin: 0.25rem 0; color: #1E1E1E; opacity: 0.9; }
         .contact-form { background-color: transparent; padding: 0; border-radius: 0; box-shadow: none; }
 
         .form-control {
             border: 1.5px solid #9FB3C8;
             background-color: #FFFFFF;
             border-radius: 8px;
-            padding: 12px 15px;
-            font-size: 1rem;
+            padding: 10px 12px;
+            font-size: 0.75rem;
         }
         .form-control::placeholder { color: #98A6B8; }
-        .form-control:focus { box-shadow: 0 0 0 3px rgba(47,147,181,0.15); border-color: #6ea8c3; }
+        .form-control:focus { box-shadow: 0 0 0 3px rgba(30,30,30,0.12); border-color: #1E1E1E; }
 
         .btn-submit {
-            background-color: var(--brand-blue);
-            border: 1px solid #2a89a8;
-            color: var(--white);
-            padding: 12px 30px;
+            background-color: #1E1E1E;
+            border: 1px solid #1E1E1E;
+            color: #FFFFFF;
+            padding: 10px 24px;
             border-radius: 6px;
             font-weight: 600;
-            transition: all 0.2s ease;
+            transition: background-color 0.2s ease;
             box-shadow: none;
             width: 100%;
         }
-        .btn-submit:hover { background-color: #2a89a8; }
+        .btn-submit:hover { background-color: #2a2a2a; }
 
         .footer {
-            background-color: #EDEFF4;
-            color: var(--dark-gray);
-            padding: 1.25rem 0;
-            border-top: 1px solid #D6DDE5;
+            background-color: #E4E4E2;
+            color: #1E1E1E;
+            padding: 1rem 0;
+            border-top: 1px solid #1E1E1E;
         }
-
-        .social-icons a {
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            background-color: transparent;
-            color: var(--dark-gray);
-            border-radius: 4px;
-            text-align: center;
-            line-height: 26px;
-            margin-right: 8px;
-            border: 2px solid #7F90A5;
-        }
+        .contact-section .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background-color: transparent; color: #1E1E1E; border-radius: 6px; margin-right: 6px; border: 2px solid #7F90A5; }
 
         @media (max-width: 768px) {
             .hero-content h1 {
@@ -619,24 +491,12 @@
             
             .hero-content .role {
                 font-size: 1.1rem;
-            }
+            }   
             
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .section {
-                padding: 2.5rem 0;
-            }
         }
-
         @media (max-width: 576px) {
             .hero-section {
                 padding: 2.5rem 0;
-            }
-            
-            .section {
-                padding: 2rem 0;
             }
             
             .hero-content h1 {
@@ -688,7 +548,7 @@
                     <div class="hero-content">
                         <h1><em>Hello, I am</em> <span class="name">Ericka</span></h1>
                         <div class="role">Aspiring UI/UX & Graphic Designer</div>
-                        <button class="btn btn-primary-custom" type="button" aria-label="Scroll to contact section" data-scroll-target="#contact">Get in Touch</button>
+                        <a class="btn btn-primary-custom" href="#about" aria-label="Go to About section">Get in Touch</a>
                     </div>
                 </div>
             </div>
@@ -756,7 +616,6 @@
         </div>
     </section>
 
-
     <section id="projects" class="section">
         <div class="projects-intro">
             <div class="container">
@@ -768,31 +627,31 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/projects/iphone-showcase.jpg" alt="Iphone 11 - Showcase" />
+                        <img class="project-thumb" src="img/iphone11.png" alt="Iphone 11 - Showcase" />
                         <h4 class="project-title">Iphone 11 - Showcase</h4>
                         <p class="project-description">The iPhone 11 Showcase is a website that presents the iPhone 11's features and design in a clean and visually engaging way.</p>
                         <p class="project-tools mb-1">
                             <span>Figma</span> · <span>HTML</span> · <span>Bootstrap</span>
                         </p>
                         <p class="project-role">Role: UI/UX Designer – Full-stack Developer</p>
-                        <div class="project-actions"><a class="view-more" href="https://github.com/erickamaynete/iphone-11.git" target="_blank" rel="noopener noreferrer">View more</a></div>
+                        <div class="project-actions"><a class="view-more" href="https://erickamaynete.github.io/iphone-11/" target="_blank" rel="noopener noreferrer">View more</a></div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/projects/maldives-island.jpg" alt="Maldives Island" />
+                        <img class="project-thumb" src="img/maldives.png" alt="Maldives Island" />
                         <h4 class="project-title">Maldives Island</h4>
                         <p class="project-description">The Maldives Island website is a tourism platform that highlights attractions, culture, and history through an informative and user-friendly design.</p>
                         <p class="project-tools mb-1">
                             <span>Figma</span> · <span>HTML</span> · <span>Bootstrap</span>
                         </p>
                         <p class="project-role">Role: UI/UX Designer – Full-stack Developer</p>
-                        <div class="project-actions"><a class="view-more" href="https://github.com/erickamaynete/maldives-island.git" target="_blank" rel="noopener noreferrer">View more</a></div>
+                        <div class="project-actions"><a class="view-more" href="https://erickamaynete.github.io/maldives-island/" target="_blank" rel="noopener noreferrer">View more</a></div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/projects/etech-ecommerce.jpg" alt="E-Tech E-commerce Platform" />
+                        <img class="project-thumb" src="img/etech.png" alt="E-Tech E-commerce Platform" />
                         <h4 class="project-title">E-Tech E-commerce Platform</h4>
                         <p class="project-description">E-Tech is a group project showcasing a sleek, user-friendly online store for gadgets and home appliances.</p>
                         <p class="project-tools mb-1">
@@ -804,7 +663,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/projects/tranquil-trails.jpg" alt="Tranquil Trails Resort" />
+                        <img class="project-thumb" src="img/tranquil.png" alt="Tranquil Trails Resort" />
                         <h4 class="project-title">Tranquil Trails Resort</h4>
                         <p class="project-description">Tranquil Trails is a group project that showcases a resort management system focused on smooth booking, efficient guest handling, and streamlined service management.</p>
                         <p class="project-tools mb-1">
@@ -816,7 +675,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/projects/dreamscape-dash.jpg" alt="Dreamscape Dash" />
+                        <img class="project-thumb" src="img/dreamscape.jpg" alt="Dreamscape Dash" />
                         <h4 class="project-title">Dreamscape Dash</h4>
                         <p class="project-description">A collaborative group project game developed for a programming course, showcasing teamwork, creativity, and engaging gameplay designed to entertain and challenge players.</p>
                         <p class="project-tools mb-1">
@@ -828,7 +687,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/projects/ev-mobile.jpg" alt="EV Mobile Application" />
+                        <img class="project-thumb" src="img/ev.png" alt="EV Mobile Application" />
                         <h4 class="project-title">EV Mobile Application</h4>
                         <p class="project-description">A personal project designed using Figma and Adobe, showcasing skills in UI design and interactive prototyping for a smooth and user-friendly mobile experience.</p>
                         <p class="project-tools mb-1">
@@ -842,56 +701,40 @@
         </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section skills-dark">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <p class="section-subtitle">Skills and Technologies</p>
+            <div class="d-flex justify-content-center mb-2"><div class="skills-separator"></div></div>
+            <div class="row align-items-start g-4">
+                <div class="col-lg-6">
+                    <h3 class="skills-heading">Tools & Language</h3>
+                    <ul class="skills-bullets">
+                        <li><strong>UI/UX Design:</strong> Figma</li>
+                        <li><strong>Graphics Design:</strong> Figma · Adobe XD · Canva</li>
+                        <li><strong>Front-end:</strong> HTML · Bootstrap · CSS · Javascript</li>
+                        <li><strong>Back-end:</strong> Python · MySQL · PHP</li>
+                        <li><strong>Documentation:</strong> Notion</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="skills-heading">Skills</h3>
+                    <ul class="skills-bullets">
+                        <li>Skilled in UI/UX design, including wireframing, prototyping, and user research</li>
+                        <li>Experienced in graphic design, branding, and layout composition</li>
+                        <li>Proficient with design tools like Figma, Photoshop, and Canva</li>
+                        <li>Knowledgeable in HTML, CSS, JavaScript, and frameworks like Bootstrap</li>
+                        <li>Capable of creating responsive web and mobile interfaces</li>
+                        <li>Focused on designing user-centered and visually cohesive experiences</li>
+                    </ul>
+                </div>
+            </div>
 
-            <div class="row g-4 skills-grid">
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card block">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="skill-badge badge-tech me-3"><i class="fa-solid fa-gears"></i></div>
-                            <h4 class="skill-title m-0">Technical Skills</h4>
-                        </div>
-                        <ul class="skill-list">
-                            <li>UI/UX Design & Research</li>
-                            <li>Wireframing & Prototyping</li>
-                            <li>Responsive Web & Mobile Design</li>
-                            <li>Visual Design & Branding</li>
-                            <li>Usability Testing & Accessibility</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card block">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="skill-badge badge-tools me-3"><i class="fa-solid fa-code"></i></div>
-                            <h4 class="skill-title m-0">Tools & Languages</h4>
-                        </div>
-                        <ul class="skill-list">
-                            <li>UI/UX Design: Figma, Adobe XD</li>
-                            <li>Graphic Design: Adobe PS, AI, Canva</li>
-                            <li>Front-end: HTML, CSS, Bootstrap</li>
-                            <li>Back-end: Python, MySQL, PHP</li>
-                            <li>Documentation: Notion</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-card block">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="skill-badge badge-creative me-3"><i class="fa-solid fa-palette"></i></div>
-                            <h4 class="skill-title m-0">Creative Expertise</h4>
-                        </div>
-                        <ul class="skill-list">
-                            <li>Brand Identity Development</li>
-                            <li>Typography & Color Theory</li>
-                            <li>Layout & Composition</li>
-                            <li>Design & Prototyping</li>
-                            <li>User Research & Collaboration</li>
-                        </ul>
-                    </div>
+            <div class="favorites mt-5">
+                <h3 class="favorites-title"><em>My</em> <span class="u-underline">Favorite</span></h3>
+                <div class="favorites-icons">
+                    <div class="fav-box"><img src="https://cdn.simpleicons.org/figma/1E1E1E" alt="Figma" /></div>
+                    <div class="fav-box"><img src="img/ps.png" alt="Adobe Photoshop" /></div>
+                    <div class="fav-box"><img src="img/id.png" alt="Adobe InDesign" /></div>
+                    <div class="fav-box"><img src="https://cdn.simpleicons.org/canva/1E1E1E" alt="Canva" /></div>
                 </div>
             </div>
         </div>
@@ -902,7 +745,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="contact-info">
-                        <h2>Have an idea?<br>Let’s Work Together</h2>
+                        <h2><em>Have an idea?</em><br>Let’s Work <span class="u-underline">Together</span></h2>
                         <div class="contact-details">
                             <p><i class="fas fa-envelope me-2"></i>erickamaynete@gmail.com</p>
                             <p><i class="fas fa-phone me-2"></i>+63 993 015 2544</p>
@@ -944,13 +787,6 @@
                 <div class="col-md-6">
                     <p class="mb-0">© 2025 all rights reserved.</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="social-icons text-md-end">
-                        <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
@@ -978,15 +814,6 @@
             });
         });
 
-        document.querySelectorAll('[data-scroll-target]').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const target = document.querySelector(this.getAttribute('data-scroll-target'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -995,7 +822,7 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
+                if (window.scrollY >= (sectionTop - 200)) {
                     current = section.getAttribute('id');
                 }
             });
