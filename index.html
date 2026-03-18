@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ericka Maynete - UI/UX & Graphic Designer</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Radley:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Radley:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         :root {
             --bg: #E4E4E2;
             --text: #1E1E1E;
             --white: #FFFFFF;
+            --nav-bg: #E4E4E2;
+            --nav-text: #1E1E1E;
         }
 
         * {
@@ -30,21 +35,25 @@
             padding-top: 0;
             font-size: 15px;
         }
-        
+
         .navbar {
-            background-color: var(--bg) !important;
+            background-color: var(--nav-bg) !important;
             box-shadow: none;
-            padding: 0.5rem;
+            padding: 0.75rem 1rem;
             margin-bottom: 0;
-            border-bottom: 1px solid rgba(30,30,30,0.2);
+            border-bottom: none;
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 1030;
         }
+
         .navbar::after {
             content: "";
             position: absolute;
-            left: 0; right: 0;
+            left: 0;
+            right: 0;
             bottom: -1px;
             height: 0;
             background: transparent;
@@ -52,26 +61,39 @@
         }
 
         .navbar-nav .nav-link {
-            color: var(--text);
+            color: var(--nav-text);
             font-weight: 500;
-            margin: 0 1rem;
+            margin: 0 0.75rem;
+            padding: 0.2 0.75rem 0;
+            font-size: 0.85rem;
         }
 
         .navbar-nav .nav-link.active {
-            color: var(--text);
+            color: var(--nav-text);
             text-decoration: underline;
             text-underline-offset: 6px;
         }
 
+        .navbar-nav .nav-link:hover {
+            color: var(--nav-text);
+            opacity: 0.8;
+        }
+
         .btn-contact {
-            color: var(--text) !important;
-            border: 2px solid var(--text);
+            color: var(--nav-text) !important;
+            border: 2px solid var(--nav-text);
             border-radius: 8px;
             padding: 6px 16px;
             line-height: 1;
             background: transparent;
+            font-size: 0.85rem;
+            margin-left: 0.75rem;
         }
-        .btn-contact:hover { background-color: rgba(30,30,30,0.08); }
+
+        .btn-contact:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--nav-text) !important;
+        }
 
         .hero-section {
             background: var(--bg);
@@ -94,8 +116,15 @@
             line-height: 1.1;
             text-align: center;
         }
-        .hero-content h1 em { font-style: italic; }
-        .hero-content h1 .name { text-decoration: underline; text-underline-offset: 8px; }
+
+        .hero-content h1 em {
+            font-style: italic;
+        }
+
+        .hero-content h1 .name {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+        }
 
         .hero-content {
             display: flex;
@@ -129,33 +158,67 @@
             background-color: var(--bg);
             color: var(--text);
             border: 2px solid var(--text);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+            box-shadow: none;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: rgba(30, 30, 30, 0.06);
+            box-shadow: none;
+            transform: none;
+        }
+
+        .btn-resume {
+            background-color: #1E1E1E;
+            color: #FFFFFF;
+            border: 2px solid #1E1E1E;
             padding: 10px 40px;
             border-radius: 12px;
             font-weight: 600;
             font-size: 0.95rem;
             transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
             box-shadow: none;
-            display: block;
-            margin: 1rem;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0;
         }
 
-        .btn-primary-custom:hover {
-            background-color: rgba(30,30,30,0.06);
+        .btn-resume:hover {
+            background-color: #2a2a2a;
             box-shadow: none;
             transform: none;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
         }
 
         .about-section {
             background-color: #1E1E1E;
             color: #E4E4E2;
-            padding: clamp(0.5rem, 4vw, 2rem) 0;
+            padding: clamp(0.5rem, 4vw, 3rem) 0;
         }
+
         .about-layout {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: clamp(10px, 2vw, 16px);
             align-items: center;
         }
+
         .about-section .profile-pic {
             width: 100%;
             max-width: 380px;
@@ -164,13 +227,15 @@
             position: relative;
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
             background: #141414;
         }
-        .about-section .profile-pic::before{
+
+        .about-section .profile-pic::before {
             content: none;
         }
-        .about-section .profile-pic img{
+
+        .about-section .profile-pic img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -179,6 +244,7 @@
             border-radius: 0;
             box-shadow: none;
         }
+
         .text-col {
             display: flex;
             flex-direction: column;
@@ -215,6 +281,7 @@
             background: rgba(228, 228, 226, 0.55);
             position: relative;
         }
+
         .section-head .rule.edge {
             flex: 1 1 auto;
             width: auto;
@@ -275,6 +342,7 @@
             background: rgba(228, 228, 226, 0.85);
             transform: translateY(-50%);
         }
+
         .section-head.left.circle-left .rule::after {
             left: -6px;
             right: auto;
@@ -391,6 +459,7 @@
             background-color: #E4E4E2;
             padding: clamp(2rem, 6vw, 4rem) 0;
         }
+
         .projects-intro .projects-title {
             font-family: 'Radley', serif;
             font-size: clamp(36px, 4.2vw, 64px);
@@ -400,6 +469,7 @@
             margin: 0;
             color: #1E1E1E;
         }
+
         .projects-intro .projects-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(14px, 1.2vw, 18px);
@@ -415,43 +485,191 @@
             text-decoration-thickness: 2px;
         }
 
-        #projects { background-color: #E4E4E2; padding-bottom: 2rem; }
+        #projects {
+            background-color: #E4E4E2;
+            padding-bottom: 2rem;
+        }
 
-        .project-tools { font-family: 'Montserrat', sans-serif; color: #1E1E1E; margin-bottom: 0.35rem; }
-        .project-tools span { font-weight: 300; }
+        .project-tools {
+            font-family: 'Montserrat', sans-serif;
+            color: #1E1E1E;
+            margin-bottom: 0.35rem;
+        }
 
-        .project-role { display: inline-block; background: #1E1E1E; color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-weight: 400; padding: 6px 10px; border-radius: 4px; }
+        .project-tools span {
+            font-weight: 300;
+        }
 
-        .project-thumb { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; display: block; }
+        .project-role {
+            display: inline-block;
+            background: #1E1E1E;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
 
-        .project-actions { margin-top: 8px; text-align: right; }
-        .project-actions .view-more { font-family: 'Montserrat', sans-serif; color: #1E1E1E; font-weight: 600; text-decoration: underline; }
+        .project-thumb {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+        }
 
-        .skills-dark { background-color: #1E1E1E; color: #E4E4E2; padding: clamp(2rem, 6vw, 4rem) 0; }
-        .skills-dark .skills-heading { font-family: 'Poppins', sans-serif; font-weight: 700; color: #FFFFFF; margin-bottom: 0.5rem; font-size: 1rem; }
-        .skills-dark .skills-bullets { margin: 0; padding-left: 1rem; list-style: disc; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; }
-        .skills-dark .skills-bullets li { margin: 0.25rem 0; }
-        .skills-dark .skills-bullets li strong { color: #FFFFFF; font-weight: 600; }
+        .project-actions {
+            margin-top: 8px;
+            text-align: right;
+        }
 
-        .skills-dark .favorites-title { font-family: 'Radley', serif; color: #FFFFFF; margin-bottom: 0.6rem; text-align: left; font-size: clamp(20px, 2vw, 32px); }
-        .skills-dark .favorites-title .u-underline { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
-        .skills-dark .skills-separator { width: 120px; height: 2px; background: #E4E4E2; border-radius: 2px; position: relative; margin: 0.3rem 0 0.6rem; }
-        .skills-dark .skills-separator::after { content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; border-radius: 50%; background: #E4E4E2; transform: translate(-50%, -50%); }
+        .project-actions .view-more {
+            font-family: 'Montserrat', sans-serif;
+            color: #1E1E1E;
+            font-weight: 600;
+            text-decoration: underline;
+        }
 
-        .skills-dark .favorites-icons { display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; }
-        .skills-dark .fav-box { width: 92px; height: 72px; border-radius: 14px; background: #E4E4E2; color: #1E1E1E; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.28); }
-        .skills-dark .fav-box i { font-size: 32px; }
-        .skills-dark .fav-box img { width: 36px; height: 36px; display: block; }
-        .skills-dark .fav-text { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 22px; line-height: 1; }
+        .skills-dark {
+            background-color: #1E1E1E;
+            color: #E4E4E2;
+            padding: clamp(2rem, 6vw, 4rem) 0;
+        }
 
-        
+        .skills-dark .skills-heading {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
 
-        .contact-section { background-color: #E4E4E2; padding: 1rem 0; margin: 1rem 0; }
-        .contact-info h2 { font-family: 'Radley', serif; font-weight: 400; color: #1E1E1E; margin-bottom: 0.5rem; font-size: clamp(22px, 2.6vw, 36px); }
-        .contact-info h2 em { font-style: italic; }
-        .contact-info .u-underline { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
-        .contact-details p { margin: 0.25rem 0; color: #1E1E1E; opacity: 0.9; }
-        .contact-form { background-color: transparent; padding: 0; border-radius: 0; box-shadow: none; }
+        .skills-dark .skills-bullets {
+            margin: 0;
+            padding-left: 1rem;
+            list-style: disc;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .skills-dark .skills-bullets li {
+            margin: 0.25rem 0;
+        }
+
+        .skills-dark .skills-bullets li strong {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .skills-dark .favorites-title {
+            font-family: 'Radley', serif;
+            color: #FFFFFF;
+            margin-bottom: 0.6rem;
+            text-align: left;
+            font-size: clamp(20px, 2vw, 32px);
+        }
+
+        .skills-dark .favorites-title .u-underline {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 2px;
+        }
+
+        .skills-dark .skills-separator {
+            width: 120px;
+            height: 2px;
+            background: #E4E4E2;
+            border-radius: 2px;
+            position: relative;
+            margin: 0.3rem 0 0.6rem;
+        }
+
+        .skills-dark .skills-separator::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #E4E4E2;
+            transform: translate(-50%, -50%);
+        }
+
+        .skills-dark .favorites-icons {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .skills-dark .fav-box {
+            width: 92px;
+            height: 72px;
+            border-radius: 14px;
+            background: #E4E4E2;
+            color: #1E1E1E;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+        }
+
+        .skills-dark .fav-box i {
+            font-size: 32px;
+        }
+
+        .skills-dark .fav-box img {
+            width: 36px;
+            height: 36px;
+            display: block;
+        }
+
+        .skills-dark .fav-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1;
+        }
+
+
+
+        .contact-section {
+            background-color: #E4E4E2;
+            padding: 1rem 0;
+            margin: 1rem 0;
+        }
+
+        .contact-info h2 {
+            font-family: 'Radley', serif;
+            font-weight: 400;
+            color: #1E1E1E;
+            margin-bottom: 0.5rem;
+            font-size: clamp(22px, 2.6vw, 36px);
+        }
+
+        .contact-info h2 em {
+            font-style: italic;
+        }
+
+        .contact-info .u-underline {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 2px;
+        }
+
+        .contact-details p {
+            margin: 0.25rem 0;
+            color: #1E1E1E;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
 
         .form-control {
             border: 1.5px solid #9FB3C8;
@@ -460,8 +678,15 @@
             padding: 10px 12px;
             font-size: 0.75rem;
         }
-        .form-control::placeholder { color: #98A6B8; }
-        .form-control:focus { box-shadow: 0 0 0 3px rgba(30,30,30,0.12); border-color: #1E1E1E; }
+
+        .form-control::placeholder {
+            color: #98A6B8;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 3px rgba(30, 30, 30, 0.12);
+            border-color: #1E1E1E;
+        }
 
         .btn-submit {
             background-color: #1E1E1E;
@@ -474,7 +699,10 @@
             box-shadow: none;
             width: 100%;
         }
-        .btn-submit:hover { background-color: #2a2a2a; }
+
+        .btn-submit:hover {
+            background-color: #2a2a2a;
+        }
 
         .footer {
             background-color: #E4E4E2;
@@ -482,45 +710,77 @@
             padding: 1rem 0;
             border-top: 1px solid #1E1E1E;
         }
-        .contact-section .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background-color: transparent; color: #1E1E1E; border-radius: 6px; margin-right: 6px; border: 2px solid #7F90A5; }
+
+        .contact-section .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background-color: transparent;
+            color: #1E1E1E;
+            border-radius: 6px;
+            margin-right: 6px;
+            border: 2px solid #7F90A5;
+        }
 
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.3rem;
             }
-            
+
             .hero-content .role {
                 font-size: 1.1rem;
-            }   
-            
+            }
+
+            .navbar-nav .nav-link {
+                margin: 0 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .btn-contact {
+                padding: 4px 12px;
+                font-size: 0.85rem;
+            }
         }
+
         @media (max-width: 576px) {
             .hero-section {
                 padding: 2.5rem 0;
             }
-            
+
             .hero-content h1 {
                 font-size: 1.8rem;
             }
         }
-        @media (max-width: 992px){
-            .about-layout{ grid-template-columns: 1fr; }
-            .profile-pic{ margin-bottom: 10px; }
-            .section-head.right{ justify-content: flex-start; }
+
+        @media (max-width: 992px) {
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-pic {
+                margin-bottom: 10px;
+            }
+
+            .section-head.right {
+                justify-content: flex-start;
+            }
         }
-        @media (max-width: 576px){
-            .vi-grid{ grid-template-columns: 1fr; }
+
+        @media (max-width: 576px) {
+            .vi-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
+            <div class="d-flex justify-content-end align-items-center w-100">
+                <ul class="navbar-nav d-flex flex-row align-items-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
@@ -533,7 +793,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
-                    <li class="nav-item mt-2 mt-lg-0">
+                    <li class="nav-item">
                         <a class="nav-link btn-contact" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -548,7 +808,11 @@
                     <div class="hero-content">
                         <h1><em>Hello, I am</em> <span class="name">Ericka</span></h1>
                         <div class="role">Aspiring UI/UX & Graphic Designer</div>
-                        <a class="btn btn-primary-custom" href="#about" aria-label="Go to About section">Get in Touch</a>
+                        <div class="button-group">
+                            <a class="btn btn-primary-custom" href="#about" aria-label="Go to About section">Get in
+                                Touch</a>
+                            <a class="btn btn-resume" href="#" aria-label="Download Resume" target="_blank">Resume</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -569,7 +833,12 @@
                         <span class="rule edge" aria-hidden="true"></span>
                     </div>
                     <div class="intro">
-                        <p>Hi! I’m Ericka Maynete, a creator who loves bringing ideas to life through design. I’m currently studying at the <strong>Polytechnic University of the Philippines – Sto. Tomas Campus</strong>. I enjoy turning concepts into visuals that tell stories and spark connections. I create graphic designs for our university publication, craft UI designs for academic projects, and continuously explore new styles to grow my creative skills. Design is where I express myself, explore creativity, and keep learning something new every day.</p>
+                        <p>Hi! I’m Ericka Maynete, a creator who loves bringing ideas to life through design. I’m
+                            currently studying at the <strong>Polytechnic University of the Philippines – Sto. Tomas
+                                Campus</strong>. I enjoy turning concepts into visuals that tell stories and spark
+                            connections. I create graphic designs for our university publication, craft UI designs for
+                            academic projects, and continuously explore new styles to grow my creative skills. Design is
+                            where I express myself, explore creativity, and keep learning something new every day.</p>
                         <p class="quote">“Not all who wander are lost” – J.R.R. Tolkien</p>
                     </div>
 
@@ -620,7 +889,8 @@
         <div class="projects-intro">
             <div class="container">
                 <h2 class="projects-title"><em>My</em> <span class="u-underline">Projects</span></h2>
-                <p class="projects-subtitle">A curated collection of projects showcasing my skills in graphic design and UI/UX</p>
+                <p class="projects-subtitle">A curated collection of projects showcasing my skills in graphic design and
+                    UI/UX</p>
             </div>
         </div>
         <div class="container">
@@ -629,13 +899,15 @@
                     <div class="project-card">
                         <img class="project-thumb" src="img/iphone11.png" alt="Iphone 11 - Showcase" />
                         <h4 class="project-title">Iphone 11 - Showcase</h4>
-                        <p class="project-description">The iPhone 11 Showcase is a website that presents the iPhone 11's features and design in a clean and visually engaging way.</p>
+                        <p class="project-description">The iPhone 11 Showcase is a website that presents the iPhone 11's
+                            features and design in a clean and visually engaging way.</p>
                         <p class="project-tools mb-1">
                             <span>Figma</span> · <span>HTML</span> · <span>Bootstrap</span>
                         </p>
                         <p class="project-role">Role: UI/UX Designer – Full-stack Developer</p>
                         <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/iphone-11/" target="_blank" rel="noopener noreferrer">View more</a>
+                            <a class="view-more" href="https://erickamaynete.github.io/iphone-11/" target="_blank"
+                                rel="noopener noreferrer">View more</a>
                         </div>
                     </div>
                 </div>
@@ -643,13 +915,15 @@
                     <div class="project-card">
                         <img class="project-thumb" src="img/maldives.png" alt="Maldives Island" />
                         <h4 class="project-title">Maldives Island</h4>
-                        <p class="project-description">The Maldives Island website showcases the beauty of the Maldives with stunning visuals and information about its attractions and culture.</p>
+                        <p class="project-description">The Maldives Island website showcases the beauty of the Maldives
+                            with stunning visuals and information about its attractions and culture.</p>
                         <p class="project-tools mb-1">
                             <span>HTML</span> · <span>CSS</span> · <span>JavaScript</span>
                         </p>
                         <p class="project-role">Role: Front-end Developer</p>
                         <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/maldives-island/" target="_blank" rel="noopener noreferrer">View more</a>
+                            <a class="view-more" href="https://erickamaynete.github.io/maldives-island/" target="_blank"
+                                rel="noopener noreferrer">View more</a>
                         </div>
                     </div>
                 </div>
@@ -657,13 +931,16 @@
                     <div class="project-card">
                         <img class="project-thumb" src="img/gallery.png" alt="Design Gallery" />
                         <h4 class="project-title">Design Gallery</h4>
-                        <p class="project-description">A collection of my latest design works including publications materials, graphical layouts, UI/UX projects, branding, and visual design pieces.</p>
+                        <p class="project-description">A collection of my latest design works including publications
+                            materials, graphical layouts, UI/UX projects, branding, and visual design pieces.</p>
                         <p class="project-tools mb-1">
-                            <span>Figma</span> · <span>Adobe XD</span> · <span>Photoshop</span> · <span>Illustrator</span>
+                            <span>Figma</span> · <span>Adobe XD</span> · <span>Photoshop</span> ·
+                            <span>Illustrator</span>
                         </p>
                         <p class="project-role">Role: UI/UX & Visual Designer</p>
                         <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/Gallery/" target="_blank" rel="noopener noreferrer">View more</a>
+                            <a class="view-more" href="https://erickamaynete.github.io/Gallery/" target="_blank"
+                                rel="noopener noreferrer">View more</a>
                         </div>
                     </div>
                 </div>
@@ -671,13 +948,15 @@
                     <div class="project-card">
                         <img class="project-thumb" src="img/studioghibli.png" alt="Studio Ghibli Archive" />
                         <h4 class="project-title">Studio Ghibli Archive</h4>
-                        <p class="project-description">Studio Ghibli Archive is a website that uses API integration to display and search through the complete list of Studio Ghibli films.</p>
+                        <p class="project-description">Studio Ghibli Archive is a website that uses API integration to
+                            display and search through the complete list of Studio Ghibli films.</p>
                         <p class="project-tools mb-1">
                             <span>Bootstrap</span> · <span>HTML</span> · <span>Javascript</span>
                         </p>
                         <p class="project-role">Role: Full-stack Developer</p>
                         <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/studio-ghibli-archive-API/" target="_blank" rel="noopener noreferrer">View more</a>
+                            <a class="view-more" href="https://erickamaynete.github.io/studio-ghibli-archive-API/"
+                                target="_blank" rel="noopener noreferrer">View more</a>
                         </div>
                     </div>
                 </div>
@@ -687,7 +966,9 @@
 
     <section id="skills" class="section skills-dark">
         <div class="container">
-            <div class="d-flex justify-content-center mb-2"><div class="skills-separator"></div></div>
+            <div class="d-flex justify-content-center mb-2">
+                <div class="skills-separator"></div>
+            </div>
             <div class="row align-items-start g-4">
                 <div class="col-lg-6">
                     <h3 class="skills-heading">Tools & Language</h3>
@@ -718,7 +999,7 @@
                     <div class="fav-box"><img src="https://cdn.simpleicons.org/figma/1E1E1E" alt="Figma" /></div>
                     <div class="fav-box"><img src="img/ps.png" alt="Adobe Photoshop" /></div>
                     <div class="fav-box"><img src="img/id.png" alt="Adobe InDesign" /></div>
-                     <div class="fav-box"><img src="img/canva.png" alt="Canva" /></div>
+                    <div class="fav-box"><img src="img/canva.png" alt="Canva" /></div>
                 </div>
             </div>
         </div>
@@ -755,7 +1036,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="Your message here..."></textarea>
+                                <textarea class="form-control" id="message" rows="4"
+                                    placeholder="Your message here..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-submit">Submit</button>
                         </form>
@@ -776,9 +1058,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
-        function setBodyOffset(){
+        function setBodyOffset() {
             const nav = document.querySelector('.navbar');
             if (!nav) return;
             document.body.style.paddingTop = nav.offsetHeight + 'px';
@@ -798,10 +1080,10 @@
             });
         });
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-            
+
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -818,6 +1100,8 @@
                 }
             });
         });
+
     </script>
 </body>
+
 </html>
