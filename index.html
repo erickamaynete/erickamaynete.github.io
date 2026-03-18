@@ -21,6 +21,7 @@
             --nav-text: #1E1E1E;
         }
 
+        /* Base responsive styles */
         * {
             margin: 0;
             padding: 0;
@@ -33,13 +34,16 @@
             color: var(--text);
             background-color: var(--bg);
             padding-top: 0;
-            font-size: 15px;
+            font-size: 16px;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
 
         .navbar {
             background-color: var(--nav-bg) !important;
             box-shadow: none;
-            padding: 0.75rem 1rem;
+            padding: 1rem;
             margin-bottom: 0;
             border-bottom: none;
             position: fixed;
@@ -63,9 +67,14 @@
         .navbar-nav .nav-link {
             color: var(--nav-text);
             font-weight: 500;
-            margin: 0 0.75rem;
-            padding: 0.2 0.75rem 0;
-            font-size: 0.85rem;
+            margin: 0 0.5rem;
+            padding: 0.75rem 0.5rem;
+            font-size: 0.875rem;
+            min-height: 44px;
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .navbar-nav .nav-link.active {
@@ -83,11 +92,16 @@
             color: var(--nav-text) !important;
             border: 2px solid var(--nav-text);
             border-radius: 8px;
-            padding: 6px 16px;
+            padding: 0.75rem 1rem;
             line-height: 1;
             background: transparent;
-            font-size: 0.85rem;
-            margin-left: 0.75rem;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+            min-height: 44px;
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-contact:hover {
@@ -97,8 +111,8 @@
 
         .hero-section {
             background: var(--bg);
-            padding: 4rem 0;
-            min-height: 85vh;
+            padding: 6rem 1rem 4rem;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             margin-top: 0;
@@ -109,10 +123,10 @@
 
         .hero-content h1 {
             font-family: 'Radley', serif;
-            font-size: 4rem;
+            font-size: clamp(2rem, 8vw, 4rem);
             font-weight: 400;
             color: var(--text);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             line-height: 1.1;
             text-align: center;
         }
@@ -131,17 +145,18 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 4px;
-            max-width: 900px;
+            gap: 1rem;
+            max-width: 100%;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .hero-content .role {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 3vw, 1.5rem);
             color: var(--text);
             font-weight: 500;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             text-align: center;
         }
 
@@ -154,56 +169,52 @@
             text-align: center;
         }
 
+        .btn-primary-custom, .btn-resume {
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            margin: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid;
+            min-height: 44px;
+            min-width: 44px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         .btn-primary-custom {
             background-color: var(--bg);
             color: var(--text);
-            border: 2px solid var(--text);
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-            box-shadow: none;
-            display: inline-block;
-            text-decoration: none;
-            margin: 0;
+            border-color: var(--text);
         }
 
         .btn-primary-custom:hover {
             background-color: rgba(30, 30, 30, 0.06);
-            box-shadow: none;
-            transform: none;
         }
 
         .btn-resume {
             background-color: #1E1E1E;
             color: #FFFFFF;
-            border: 2px solid #1E1E1E;
-            padding: 10px 40px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-            box-shadow: none;
-            display: inline-block;
-            text-decoration: none;
-            margin: 0;
+            border-color: #1E1E1E;
         }
 
         .btn-resume:hover {
             background-color: #2a2a2a;
-            box-shadow: none;
-            transform: none;
-            color: #FFFFFF;
-            text-decoration: none;
         }
 
         .button-group {
             display: flex;
+            flex-direction: column;
             gap: 1rem;
             justify-content: center;
             align-items: center;
             margin: 1rem 0;
+            width: 100%;
         }
 
         .about-section {
@@ -214,14 +225,15 @@
 
         .about-layout {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: clamp(10px, 2vw, 16px);
+            grid-template-columns: 1fr;
+            gap: 2rem;
             align-items: center;
+            padding: 0 1rem;
         }
 
         .about-section .profile-pic {
             width: 100%;
-            max-width: 380px;
+            max-width: 300px;
             aspect-ratio: 3/4;
             margin: 0 auto;
             position: relative;
@@ -241,8 +253,6 @@
             object-fit: cover;
             object-position: center center;
             display: block;
-            border-radius: 0;
-            box-shadow: none;
         }
 
         .text-col {
@@ -432,9 +442,42 @@
         .project-card {
             background-color: transparent;
             border-radius: 12px;
-            padding: 0.25rem 0.25rem 0.5rem;
+            padding: 1rem;
             box-shadow: none;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .project-card-header {
+            flex: 0 0 auto;
+        }
+
+        .project-card-content {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card-description {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .project-card-metadata {
+            flex: 0 0 auto;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 0.75rem;
+            margin-top: auto;
+        }
+
+        .project-card-footer {
+            flex: 0 0 auto;
+            margin-top: 0.75rem;
         }
 
         .project-title {
@@ -443,6 +486,9 @@
             font-family: 'Poppins', sans-serif;
             color: #1E1E1E;
             margin: 0.6rem 0 0.25rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.3;
         }
 
         .project-description {
@@ -453,6 +499,8 @@
             color: #1E1E1E;
             opacity: 0.9;
             margin-bottom: 0.5rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .projects-intro {
@@ -490,10 +538,20 @@
             padding-bottom: 2rem;
         }
 
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
         .project-tools {
             font-family: 'Montserrat', sans-serif;
-            color: #1E1E1E;
-            margin-bottom: 0.35rem;
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            font-weight: 400;
         }
 
         .project-tools span {
@@ -505,28 +563,42 @@
             background: #1E1E1E;
             color: #FFFFFF;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            padding: 6px 10px;
+            font-weight: 500;
+            font-size: 0.75rem;
+            padding: 4px 8px;
             border-radius: 4px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 0.5rem;
         }
 
         .project-thumb {
             width: 100%;
-            height: 160px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             display: block;
         }
 
         .project-actions {
-            margin-top: 8px;
             text-align: right;
+            margin-top: 0;
         }
 
         .project-actions .view-more {
             font-family: 'Montserrat', sans-serif;
             color: #1E1E1E;
             font-weight: 600;
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .project-actions .view-more:hover {
+            color: #000000;
             text-decoration: underline;
         }
 
@@ -598,30 +670,30 @@
 
         .skills-dark .favorites-icons {
             display: flex;
-            gap: 16px;
-            justify-content: flex-start;
+            gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
         .skills-dark .fav-box {
-            width: 92px;
-            height: 72px;
-            border-radius: 14px;
+            width: 80px;
+            height: 60px;
+            border-radius: 12px;
             background: #E4E4E2;
             color: #1E1E1E;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
         }
 
         .skills-dark .fav-box i {
-            font-size: 32px;
+            font-size: 24px;
         }
 
         .skills-dark .fav-box img {
-            width: 36px;
-            height: 36px;
+            width: 30px;
+            height: 30px;
             display: block;
         }
 
@@ -631,8 +703,6 @@
             font-size: 22px;
             line-height: 1;
         }
-
-
 
         .contact-section {
             background-color: #E4E4E2;
@@ -715,62 +785,433 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
+            width: 44px;
+            height: 44px;
             background-color: transparent;
             color: #1E1E1E;
-            border-radius: 6px;
-            margin-right: 6px;
+            border-radius: 8px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
             border: 2px solid #7F90A5;
+            min-height: 44px;
+            min-width: 44px;
         }
 
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.3rem;
-            }
-
-            .hero-content .role {
-                font-size: 1.1rem;
+        /* Mobile: 320px – 480px */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.75rem 0.5rem;
             }
 
             .navbar-nav .nav-link {
-                margin: 0 0.5rem;
-                font-size: 0.9rem;
+                margin: 0 0.25rem;
+                padding: 0.5rem 0.25rem;
+                font-size: 0.75rem;
             }
 
             .btn-contact {
-                padding: 4px 12px;
-                font-size: 0.85rem;
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
+                margin-left: 0.25rem;
             }
-        }
 
-        @media (max-width: 576px) {
             .hero-section {
-                padding: 2.5rem 0;
+                padding: 5rem 0.5rem 3rem;
+                min-height: 100vh;
+            }
+
+            .hero-content {
+                padding: 0 0.5rem;
             }
 
             .hero-content h1 {
-                font-size: 1.8rem;
+                font-size: clamp(1.5rem, 10vw, 2.5rem);
             }
-        }
 
-        @media (max-width: 992px) {
+            .hero-content .role {
+                font-size: clamp(0.875rem, 4vw, 1.125rem);
+            }
+
+            .btn-primary-custom, .btn-resume {
+                font-size: 0.875rem;
+                padding: 0.875rem 1.5rem;
+                margin: 0.25rem;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .about-section {
+                padding: 2rem 0;
+            }
+
             .about-layout {
-                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 0.5rem;
             }
 
-            .profile-pic {
-                margin-bottom: 10px;
+            .about-section .profile-pic {
+                max-width: 250px;
             }
 
-            .section-head.right {
-                justify-content: flex-start;
+            .section-head h2 {
+                font-size: clamp(1.25rem, 5vw, 1.75rem);
             }
-        }
 
-        @media (max-width: 576px) {
             .vi-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-card {
+                padding: 0.75rem;
+            }
+
+            .project-title {
+                font-size: 1rem;
+            }
+
+            .project-description {
+                font-size: 0.875rem;
+            }
+
+            .projects-grid {
+                padding: 0 0.5rem;
+            }
+
+            .skills-dark {
+                padding: 2rem 0.5rem;
+            }
+
+            .skills-dark .favorites-icons {
+                gap: 0.75rem;
+            }
+
+            .skills-dark .fav-box {
+                width: 60px;
+                height: 45px;
+            }
+
+            .skills-dark .fav-box i {
+                font-size: 20px;
+            }
+
+            .skills-dark .fav-box img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .contact-section {
+                padding: 1rem 0.5rem;
+                margin: 0.5rem 0;
+            }
+
+            .contact-info h2 {
+                font-size: clamp(1.25rem, 5vw, 1.75rem);
+            }
+
+            .contact-details p {
+                font-size: 0.875rem;
+            }
+
+            .contact-section .social-icons a {
+                width: 40px;
+                height: 40px;
+                margin: 0.25rem 0.25rem 0.25rem 0;
+            }
+
+            .form-control {
+                font-size: 0.875rem;
+                padding: 0.75rem;
+            }
+        }
+
+        /* Tablet: 481px – 768px */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .navbar {
+                padding: 0.875rem 1rem;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 0 0.375rem;
+                padding: 0.625rem 0.375rem;
+                font-size: 0.8rem;
+            }
+
+            .btn-contact {
+                padding: 0.625rem 0.875rem;
+                font-size: 0.8rem;
+                margin-left: 0.375rem;
+            }
+
+            .hero-section {
+                padding: 5.5rem 1rem 3.5rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2rem, 7vw, 3rem);
+            }
+
+            .hero-content .role {
+                font-size: clamp(1rem, 3.5vw, 1.25rem);
+            }
+
+            .btn-primary-custom, .btn-resume {
+                font-size: 0.9rem;
+                padding: 0.9375rem 1.75rem;
+            }
+
+            .button-group {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .about-layout {
+                gap: 1.75rem;
+                padding: 0 1rem;
+            }
+
+            .about-section .profile-pic {
+                max-width: 280px;
+            }
+
+            .vi-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .projects-grid {
+                padding: 0 1rem;
+            }
+
+            .skills-dark .favorites-icons {
+                gap: 1rem;
+            }
+
+            .skills-dark .fav-box {
+                width: 70px;
+                height: 52px;
+            }
+
+            .skills-dark .fav-box i {
+                font-size: 22px;
+            }
+
+            .skills-dark .fav-box img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .contact-section {
+                padding: 1.25rem 1rem;
+            }
+
+            .contact-section .social-icons a {
+                width: 42px;
+                height: 42px;
+                margin: 0.375rem 0.375rem 0.375rem 0;
+            }
+        }
+
+        /* Small laptop: 769px – 1024px */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .navbar {
+                padding: 0.875rem 1.5rem;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 0 0.625rem;
+                padding: 0.75rem 0.625rem;
+                font-size: 0.875rem;
+            }
+
+            .btn-contact {
+                padding: 0.75rem 1.125rem;
+                font-size: 0.875rem;
+                margin-left: 0.625rem;
+            }
+
+            .hero-section {
+                padding: 6rem 1.5rem 4rem;
+            }
+
+            .hero-content {
+                padding: 0 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2.5rem, 6vw, 3.5rem);
+            }
+
+            .hero-content .role {
+                font-size: clamp(1.125rem, 3vw, 1.375rem);
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr 2fr;
+                gap: 2rem;
+                padding: 0 1.5rem;
+            }
+
+            .about-section .profile-pic {
+                max-width: 320px;
+            }
+
+            .vi-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .projects-grid {
+                padding: 0 1.5rem;
+            }
+
+            .skills-dark .favorites-icons {
+                gap: 1.25rem;
+            }
+
+            .skills-dark .fav-box {
+                width: 75px;
+                height: 56px;
+            }
+
+            .skills-dark .fav-box i {
+                font-size: 26px;
+            }
+
+            .skills-dark .fav-box img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .contact-section {
+                padding: 1.5rem 1.5rem;
+            }
+
+            .contact-section .social-icons a {
+                width: 44px;
+                height: 44px;
+                margin: 0.5rem 0.5rem 0.5rem 0;
+            }
+
+            .button-group {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* Desktop: 1025px and above */
+        @media (min-width: 1025px) {
+            .navbar {
+                padding: 1rem 2rem;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 0 0.75rem;
+                padding: 0.75rem 0.75rem;
+                font-size: 0.875rem;
+            }
+
+            .btn-contact {
+                padding: 0.75rem 1rem;
+                font-size: 0.875rem;
+                margin-left: 0.75rem;
+            }
+
+            .hero-section {
+                padding: 6rem 2rem 4rem;
+            }
+
+            .hero-content {
+                padding: 0 2rem;
+                max-width: 900px;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(3rem, 5vw, 4rem);
+            }
+
+            .hero-content .role {
+                font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr 2fr;
+                gap: clamp(1.5rem, 3vw, 3rem);
+                padding: 0 2rem;
+            }
+
+            .about-section .profile-pic {
+                max-width: 380px;
+            }
+
+            .vi-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: clamp(1rem, 2vw, 2rem);
+            }
+
+            .projects-grid {
+                padding: 0 2rem;
+                max-width: 1400px;
+            }
+
+            .skills-dark .favorites-icons {
+                gap: 1.5rem;
+            }
+
+            .skills-dark .fav-box {
+                width: 80px;
+                height: 60px;
+            }
+
+            .skills-dark .fav-box i {
+                font-size: 28px;
+            }
+
+            .skills-dark .fav-box img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .contact-section {
+                padding: 2rem;
+            }
+
+            .contact-section .social-icons a {
+                width: 44px;
+                height: 44px;
+                margin: 0.5rem 0.5rem 0.5rem 0;
+            }
+
+            .button-group {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* Mobile navigation centering */
+        @media (max-width: 768px) {
+            .navbar .d-flex {
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            
+            .navbar-nav {
+                justify-content: center !important;
+                width: 100%;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .skills-dark .fav-box img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
             }
         }
     </style>
@@ -788,10 +1229,10 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn-contact" href="#contact">Contact</a>
@@ -895,68 +1336,108 @@
         </div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/iphone11.png" alt="Iphone 11 - Showcase" />
-                        <h4 class="project-title">Iphone 11 - Showcase</h4>
-                        <p class="project-description">The iPhone 11 Showcase is a website that presents the iPhone 11's
-                            features and design in a clean and visually engaging way.</p>
-                        <p class="project-tools mb-1">
-                            <span>Figma</span> · <span>HTML</span> · <span>Bootstrap</span>
-                        </p>
-                        <p class="project-role">Role: UI/UX Designer – Full-stack Developer</p>
-                        <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/iphone-11/" target="_blank"
-                                rel="noopener noreferrer">View more</a>
+                        <div class="project-card-header">
+                            <img class="project-thumb" src="img/iphone11.png" alt="Iphone 11 - Showcase" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-title">Iphone 11 - Showcase</h4>
+                            <div class="project-card-description">
+                                <p class="project-description">The iPhone 11 Showcase is a website that presents the iPhone 11's
+                                    features and design in a clean and visually engaging way.</p>
+                            </div>
+                            <div class="project-card-metadata">
+                                <p class="project-tools">
+                                    <span>Figma</span> · <span>HTML</span> · <span>Bootstrap</span>
+                                </p>
+                                <p class="project-role">UI/UX Designer – Full-stack Developer</p>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-actions">
+                                <a class="view-more" href="https://erickamaynete.github.io/iphone-11/" target="_blank"
+                                    rel="noopener noreferrer">View more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/maldives.png" alt="Maldives Island" />
-                        <h4 class="project-title">Maldives Island</h4>
-                        <p class="project-description">The Maldives Island website showcases the beauty of the Maldives
-                            with stunning visuals and information about its attractions and culture.</p>
-                        <p class="project-tools mb-1">
-                            <span>HTML</span> · <span>CSS</span> · <span>JavaScript</span>
-                        </p>
-                        <p class="project-role">Role: Front-end Developer</p>
-                        <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/maldives-island/" target="_blank"
-                                rel="noopener noreferrer">View more</a>
+                        <div class="project-card-header">
+                            <img class="project-thumb" src="img/maldives.png" alt="Maldives Island" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-title">Maldives Island</h4>
+                            <div class="project-card-description">
+                                <p class="project-description">The Maldives Island website showcases the beauty of the Maldives
+                                    with stunning visuals and information about its attractions and culture.</p>
+                            </div>
+                            <div class="project-card-metadata">
+                                <p class="project-tools">
+                                    <span>HTML</span> · <span>CSS</span> · <span>JavaScript</span>
+                                </p>
+                                <p class="project-role">Front-end Developer</p>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-actions">
+                                <a class="view-more" href="https://erickamaynete.github.io/maldives-island/" target="_blank"
+                                    rel="noopener noreferrer">View more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/gallery.png" alt="Design Gallery" />
-                        <h4 class="project-title">Design Gallery</h4>
-                        <p class="project-description">A collection of my latest design works including publications
-                            materials, graphical layouts, UI/UX projects, branding, and visual design pieces.</p>
-                        <p class="project-tools mb-1">
-                            <span>Figma</span> · <span>Adobe XD</span> · <span>Photoshop</span> ·
-                            <span>Illustrator</span>
-                        </p>
-                        <p class="project-role">Role: UI/UX & Visual Designer</p>
-                        <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/Gallery/" target="_blank"
-                                rel="noopener noreferrer">View more</a>
+                        <div class="project-card-header">
+                            <img class="project-thumb" src="img/gallery.png" alt="Design Gallery" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-title">Design Gallery</h4>
+                            <div class="project-card-description">
+                                <p class="project-description">A collection of my latest design works including publications
+                                    materials, graphical layouts, UI/UX projects, branding, and visual design pieces.</p>
+                            </div>
+                            <div class="project-card-metadata">
+                                <p class="project-tools">
+                                    <span>Figma</span> · <span>Adobe XD</span> · <span>Photoshop</span> ·
+                                    <span>Illustrator</span>
+                                </p>
+                                <p class="project-role">UI/UX & Visual Designer</p>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-actions">
+                                <a class="view-more" href="https://erickamaynete.github.io/Gallery/" target="_blank"
+                                    rel="noopener noreferrer">View more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="project-card">
-                        <img class="project-thumb" src="img/studioghibli.png" alt="Studio Ghibli Archive" />
-                        <h4 class="project-title">Studio Ghibli Archive</h4>
-                        <p class="project-description">Studio Ghibli Archive is a website that uses API integration to
-                            display and search through the complete list of Studio Ghibli films.</p>
-                        <p class="project-tools mb-1">
-                            <span>Bootstrap</span> · <span>HTML</span> · <span>Javascript</span>
-                        </p>
-                        <p class="project-role">Role: Full-stack Developer</p>
-                        <div class="project-actions">
-                            <a class="view-more" href="https://erickamaynete.github.io/studio-ghibli-archive-API/"
-                                target="_blank" rel="noopener noreferrer">View more</a>
+                        <div class="project-card-header">
+                            <img class="project-thumb" src="img/studioghibli.png" alt="Studio Ghibli Archive" />
+                        </div>
+                        <div class="project-card-content">
+                            <h4 class="project-title">Studio Ghibli Archive</h4>
+                            <div class="project-card-description">
+                                <p class="project-description">Studio Ghibli Archive is a website that uses API integration to
+                                    display and search through the complete list of Studio Ghibli films.</p>
+                            </div>
+                            <div class="project-card-metadata">
+                                <p class="project-tools">
+                                    <span>Bootstrap</span> · <span>HTML</span> · <span>Javascript</span>
+                                </p>
+                                <p class="project-role">Full-stack Developer</p>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-actions">
+                                <a class="view-more" href="https://erickamaynete.github.io/studio-ghibli-archive-API/"
+                                    target="_blank" rel="noopener noreferrer">View more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1060,35 +1541,295 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Mobile-responsive body offset
         function setBodyOffset() {
             const nav = document.querySelector('.navbar');
             if (!nav) return;
             document.body.style.paddingTop = nav.offsetHeight + 'px';
         }
+        
+        // Initialize on load and resize
         window.addEventListener('load', setBodyOffset);
         window.addEventListener('resize', setBodyOffset);
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        
+        // Hierarchical Back Button Logic for SPA navigation
+        class HierarchicalNavigation {
+            constructor() {
+                this.currentSection = 'home';
+                this.isNavigating = false;
+                
+                // Define hierarchical navigation structure
+                this.hierarchy = {
+                    'home': null, // Top level - back button exits app
+                    'about': 'home', // About → Home
+                    'projects': 'about', // Projects → About
+                    'skills': 'projects', // Skills → Projects
+                    'contact': 'skills' // Contact → Skills
+                };
+                
+                // Initialize current section from URL
+                this.updateCurrentSection();
+                
+                // Listen for popstate events (back/forward buttons)
+                window.addEventListener('popstate', this.handlePopState.bind(this));
+                
+                // Debug: Log initialization
+                console.log('Hierarchical Navigation initialized');
+                console.log('Navigation hierarchy:', this.hierarchy);
+                console.log('Initial section:', this.currentSection);
+            }
+            
+            updateCurrentSection() {
+                const hash = window.location.hash.slice(1) || 'home';
+                this.currentSection = hash;
+                console.log('Current section updated to:', this.currentSection);
+            }
+            
+            navigateToSection(sectionId) {
+                if (this.isNavigating) {
+                    console.log('Navigation already in progress');
+                    return;
                 }
+                
+                // Only navigate if it's a different section
+                if (this.currentSection === sectionId) {
+                    console.log('Already on section:', sectionId);
+                    return;
+                }
+                
+                console.log('=== Hierarchical Navigation ===');
+                console.log('From:', this.currentSection);
+                console.log('To:', sectionId);
+                console.log('Hierarchical parent of', sectionId, 'is', this.hierarchy[sectionId]);
+                
+                this.isNavigating = true;
+                const target = document.querySelector(`#${sectionId}`);
+                
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight - 20;
+                    
+                    // Create browser history entry with hierarchical context
+                    try {
+                        history.pushState(
+                            { 
+                                section: sectionId,
+                                fromSection: this.currentSection,
+                                hierarchicalParent: this.hierarchy[sectionId],
+                                timestamp: Date.now()
+                            }, 
+                            `${sectionId} - Portfolio`, 
+                            `#${sectionId}`
+                        );
+                        console.log('✓ Browser history updated with hierarchy:', this.currentSection, '→', sectionId);
+                    } catch (error) {
+                        console.error('✗ History pushState error:', error);
+                    }
+                    
+                    // Update current section
+                    const previousSection = this.currentSection;
+                    this.currentSection = sectionId;
+                    
+                    // Smooth scroll to section
+                    if ('scrollBehavior' in document.documentElement.style) {
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        window.scrollTo(0, targetPosition);
+                    }
+                    
+                    // Update active navigation
+                    this.updateActiveNav();
+                    
+                    // Reset navigation flag after scroll completes
+                    setTimeout(() => {
+                        this.isNavigating = false;
+                        console.log('✓ Hierarchical navigation completed:', previousSection, '→', sectionId);
+                    }, 1000);
+                } else {
+                    console.error('✗ Target section not found:', sectionId);
+                    this.isNavigating = false;
+                }
+            }
+            
+            handlePopState(event) {
+                console.log('=== Hierarchical Back Button Pressed ===');
+                console.log('Current section:', this.currentSection);
+                console.log('Event state:', event.state);
+                
+                if (this.isNavigating) {
+                    console.log('Ignoring popstate - navigation in progress');
+                    return;
+                }
+                
+                this.isNavigating = true;
+                
+                // Get the hierarchical parent for the current section
+                const parentSection = this.hierarchy[this.currentSection];
+                
+                if (parentSection === null) {
+                    // We're at home level - allow normal back behavior (exit app)
+                    console.log('✓ At home level - allowing normal back behavior (exit app)');
+                    this.isNavigating = false;
+                    return;
+                }
+                
+                if (parentSection) {
+                    console.log('🔙 Hierarchical back:', this.currentSection, '→', parentSection);
+                    
+                    // Update current section to parent
+                    const previousSection = this.currentSection;
+                    this.currentSection = parentSection;
+                    
+                    // Navigate to the parent section
+                    const target = document.querySelector(`#${parentSection}`);
+                    if (target) {
+                        const navHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.offsetTop - navHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL to reflect hierarchical navigation
+                        history.replaceState(
+                            { 
+                                section: parentSection,
+                                hierarchicalParent: this.hierarchy[parentSection],
+                                timestamp: Date.now()
+                            }, 
+                            `${parentSection} - Portfolio`, 
+                            `#${parentSection}`
+                        );
+                        
+                        console.log('✓ Hierarchical back completed to:', parentSection);
+                    } else {
+                        console.error('✗ Parent section not found:', parentSection);
+                    }
+                } else {
+                    console.error('✗ No hierarchical parent defined for:', this.currentSection);
+                }
+                
+                // Update active navigation
+                this.updateActiveNav();
+                
+                setTimeout(() => {
+                    this.isNavigating = false;
+                    console.log('✓ Hierarchical back navigation completed');
+                }, 1000);
+            }
+            
+            updateActiveNav() {
+                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href').slice(1);
+                    if (href === this.currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                console.log('Active navigation updated for:', this.currentSection);
+            }
+            
+            // Helper method to show navigation path
+            getNavigationPath() {
+                const path = [];
+                let current = this.currentSection;
+                
+                while (current !== null) {
+                    path.unshift(current);
+                    current = this.hierarchy[current];
+                }
+                
+                return path;
+            }
+        }
+        
+        // Initialize Hierarchical Navigation
+        let hierarchicalNavigation;
+        
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            hierarchicalNavigation = new HierarchicalNavigation();
+            
+            // Touch-friendly smooth scrolling with hierarchical support
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').slice(1);
+                    hierarchicalNavigation.navigateToSection(targetId);
+                });
             });
+            
+            // Test function for debugging hierarchical navigation
+            window.testHierarchicalNavigation = function() {
+                console.log('=== Hierarchical Navigation Test ===');
+                console.log('Current section:', hierarchicalNavigation.currentSection);
+                console.log('Navigation path:', hierarchicalNavigation.getNavigationPath());
+                console.log('Current URL:', window.location.href);
+                
+                // Show hierarchical structure
+                console.log('\n🏗️ Hierarchical Structure:');
+                console.log('Home (top level) ← About ← Projects ← Skills ← Contact');
+                
+                console.log('\n🔙 Back Button Behavior:');
+                console.log('Contact → Skills');
+                console.log('Skills → Projects'); 
+                console.log('Projects → About');
+                console.log('About → Home (exit app)');
+                console.log('Home → Exit app/site');
+                
+                console.log('\nTo test:');
+                console.log('1. Navigate to any section');
+                console.log('2. Use browser back button/gesture');
+                console.log('3. Watch hierarchical back navigation');
+                console.log('==================================');
+            };
+            
+            // Helper function to simulate hierarchical back button
+            window.simulateHierarchicalBack = function() {
+                console.log('=== Simulating Hierarchical Back ===');
+                console.log('Current section:', hierarchicalNavigation.currentSection);
+                console.log('Parent section:', hierarchicalNavigation.hierarchy[hierarchicalNavigation.currentSection]);
+                
+                // Trigger a browser back action
+                window.history.back();
+                
+                console.log('Browser back() called - check hierarchical navigation in console');
+            };
+            
+            // Helper function to show navigation hierarchy
+            window.showHierarchy = function() {
+                console.log('=== Navigation Hierarchy ===');
+                console.log('Current section:', hierarchicalNavigation.currentSection);
+                console.log('Navigation path to home:', hierarchicalNavigation.getNavigationPath());
+                console.log('Full hierarchy map:', hierarchicalNavigation.hierarchy);
+                console.log('============================');
+            };
+            
+            console.log('✓ Hierarchical Navigation ready!');
+            console.log('Use testHierarchicalNavigation() to understand the hierarchy');
+            console.log('Use simulateHierarchicalBack() to test back button');
+            console.log('Use showHierarchy() to see current navigation path');
         });
 
-        window.addEventListener('scroll', function () {
+        // Active navigation highlighting with touch support
+        function updateActiveNav() {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
+            const navHeight = document.querySelector('.navbar').offsetHeight;
+            
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 200)) {
+                const sectionTop = section.offsetTop - navHeight - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
                     current = section.getAttribute('id');
                 }
             });
@@ -1099,8 +1840,55 @@
                     link.classList.add('active');
                 }
             });
+        }
+        
+        // Throttled scroll event for better performance
+        let scrollTimeout;
+        window.addEventListener('scroll', function () {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(updateActiveNav);
         });
-
+        
+        // Touch feedback for interactive elements
+        function addTouchFeedback() {
+            const touchElements = document.querySelectorAll('a, button, .btn');
+            touchElements.forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.opacity = '0.7';
+                });
+                element.addEventListener('touchend', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        }
+        
+        // Initialize touch feedback
+        if ('ontouchstart' in window) {
+            addTouchFeedback();
+        }
+        
+        // Prevent zoom on input focus (common mobile issue)
+        document.addEventListener('touchstart', function() {
+            if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+                document.activeElement.blur();
+            }
+        });
+        
+        // Handle viewport orientation changes
+        window.addEventListener('orientationchange', function() {
+            setTimeout(setBodyOffset, 100);
+        });
+        
+        // Prevent accidental exit on mobile back button when at home
+        window.addEventListener('beforeunload', function(e) {
+            // Only show confirmation if user is not on home section
+            if (spaNavigation.currentSection !== 'home') {
+                // Allow normal navigation - this handles the case where user wants to leave
+                return;
+            }
+        });
     </script>
 </body>
 
